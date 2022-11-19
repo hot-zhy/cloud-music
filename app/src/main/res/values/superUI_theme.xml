@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- toolbar深色 -->
+    <style name="SuperTheme.AppBarOverlay.Dark" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+    <style name="SuperTheme.PopupOverlay.Light" parent="ThemeOverlay.AppCompat.Light"/>
+    <!-- toolbar浅色 -->
+    <style name="SuperTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.ActionBar"/>
+    <style name="SuperTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Dark"/>
+    <!--    界面样式-->
+    <style name="SuperUI.NoActionBar" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+<!--        主色调-->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/primary</item>
+        <item name="colorOnPrimary">@color/white</item>
+<!--        次色调-->
+        <item name="colorSecondary">@color/primary</item>
+        <item name="colorSecondaryVariant">@color/white</item>
+<!--        状态栏的颜色-->
+        <item name="android:statusBarColor" tools:ignore="NewApi">@color/primary</item>
+    </style>
+
+    圆角
+    <style name="RoundCornerImageStyle">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/radius_meddle</item>
+    </style>
+
+</resources>

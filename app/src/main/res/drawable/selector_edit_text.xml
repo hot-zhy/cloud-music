@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--获取到焦点-->
+    <item android:drawable="@drawable/shape_edit_text_border_selected" android:state_focused="true" />
+
+    <!--默认状态-->
+    <item android:drawable="@drawable/shape_edit_text_border" />
+</selector>

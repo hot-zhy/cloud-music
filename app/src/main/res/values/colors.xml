@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <!--主色调-->
+    <color name="primary">#0070C0</color>
+    <color name="primary30">#a92e29</color>
+
+    <!--主色调，亮一点，主要用在主色调checkbox，默认选中时-->
+    <color name="primary50">#c92e29</color>
+    <color name="primary60">#4c85a7</color>
+
+    <!--主色调，暗一点按钮颜色，主要用来在用户详情，发送消息等按钮文本颜色-->
+    <color name="primary_button">#596c94</color>
+
+    <!--链接颜色，例如：聊天界面，可以点击的消息内容高亮颜色-->
+    <color name="link">@color/primary_button</color>
+
+    <!--item点击高亮颜色-->
+    <color name="super_click_background">#ffd5d5d5</color>
+
+    <!--文本颜色-->
+    <color name="super_text">#ff161616</color>
+
+    <!--灰色，例如：设置item右侧图标，右侧更多文本颜色-->
+    <color name="super_light_grey">#ff888888</color>
+
+    <!--region toast背景-->
+    <!--默认toast背景颜色-->
+    <color name="super_toast_background">#ff313131</color>
+
+    <!--错误toast背景颜色-->
+    <color name="super_toast_error_background">#ffdd0000</color>
+
+    <!--正确toast背景颜色-->
+    <color name="super_toast_success_background">#ff0ab855</color>
+    <!--endregion-->
+
+    <color name="super_black40">#ff2b2b2b</color>
+
+    <!--索引提示-->
+    <color name="black_transparent_88">#88000000</color>
+    <color name="button_transparent_88">#88000000</color>
+    <color name="transparent_88">#88888888</color>
+    <color name="black15">#ff111111</color>
+    <color name="black17">#ff151515</color>
+    <color name="black20">#ff161616</color>
+    <color name="black25">#ff191919</color>
+    <color name="black30">#ff111111</color>
+    <color name="black31">#ff1b1b1b</color>
+    <color name="black311">#ff1c1c1c</color>
+    <color name="black312">#ff1e1e1e</color>
+    <color name="black32">#ff202020</color>
+    <color name="black33">#ff242424</color>
+    <color name="black34">#ff272727</color>
+    <color name="black322">#ff212121</color>
+    <color name="black40">#ff292929</color>
+
+    <color name="black42">#353535</color>
+    <color name="black43">#ff313131</color>
+    <color name="black45">#ff3c3c3c</color>
+    <color name="black66">#ff666666</color>
+    <color name="black70">#ff707070</color>
+    <color name="black80">#ff888888</color>
+    <color name="black90">#aaaaaa</color>
+    <color name="black11">#bbb</color>
+    <color name="black130">#c8c8c8</color>
+    <color name="black140">#ffcfcfcf</color>
+    <color name="black150">#ffe5e5e5</color>
+    <color name="black160">#ffd5d5d5</color>
+    <color name="black165">#ffd1d1d1</color>
+    <color name="black170">#ffe1e1e1</color>
+    <color name="black180">#ededed</color>
+    <color name="black183">#f5f5f5</color>
+    <color name="black190">#fff6f6f6</color>
+
+    <!--透明颜色-->
+    <color name="transparent">@android:color/transparent</color>
+
+    <!--错误警告颜色，主要是做敏感操作，例如：删除联系人时，确认按钮颜色-->
+    <color name="warning">#fff85353</color>
+
+    <!--半透明错误警告颜色主要用于语音按钮，上滑动后提示取消-->
+    <color name="warning_transparent_88">#88ff0000</color>
+
+    <!--红色，主要用来在接收通话按钮-->
+    <color name="red">#ffdd0000</color>
+
+    <!--分割线颜色-->
+    <color name="divider">#e7e9e9</color>
+    <color name="divider2">#484848</color>
+</resources>

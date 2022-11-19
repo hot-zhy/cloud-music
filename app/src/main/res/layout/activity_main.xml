@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+<!--    顶部toolbar-->
+    <include layout="@layout/toolbar"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+<!--        放在底部的布局会盖住相对布局上面的布局-->
+        <com.zhy.view.SmallMusicControlView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/music_control"
+            android:layout_marginLeft="@dimen/padding_outer"
+            android:layout_marginBottom="@dimen/padding_outer"
+            android:layout_alignParentBottom="true"
+            ></com.zhy.view.SmallMusicControlView>
+    </RelativeLayout>
+    <include layout="@layout/divider"/>
+<!--    底部tab-->
+    <com.flyco.tablayout.CommonTabLayout
+        android:id="@+id/indicator"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/d55"
+        android:background="@color/white"
+        app:tl_iconHeight="@dimen/d20"
+        app:tl_iconWidth="@dimen/d20"
+        app:tl_indicator_color="?attr/colorPrimary"
+        app:tl_indicator_height="0dp"
+        app:tl_textSelectColor="?attr/colorPrimary"
+        app:tl_textUnselectColor="?attr/colorOnSurface"
+        app:tl_textsize="@dimen/s12"
+        app:tl_underline_color="#DDDDDD"
+        app:tl_underline_height="0dp" />
+</LinearLayout>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- dp -->
+    <dimen name="d0_5">0.5dp</dimen>
+    <dimen name="d1">1dp</dimen>
+    <dimen name="d1_5">1.5dp</dimen>
+    <dimen name="d2">2dp</dimen>
+    <dimen name="d3">3dp</dimen>
+    <dimen name="d4">4dp</dimen>
+    <dimen name="d5">5dp</dimen>
+    <dimen name="d6">6dp</dimen>
+    <dimen name="d7">7dp</dimen>
+    <dimen name="d8">8dp</dimen>
+    <dimen name="d9">9dp</dimen>
+    <dimen name="d10">10dp</dimen>
+    <dimen name="d11">11dp</dimen>
+    <dimen name="d12">12dp</dimen>
+    <dimen name="d13">13dp</dimen>
+    <dimen name="d14">14dp</dimen>
+    <dimen name="d15">15dp</dimen>
+    <dimen name="d16">16dp</dimen>
+    <dimen name="s16_5">16.5dp</dimen>
+    <dimen name="d16_5">16.5dp</dimen>
+    <dimen name="d17">17dp</dimen>
+    <dimen name="d17_5">17.5dp</dimen>
+    <dimen name="d18">18dp</dimen>
+    <dimen name="d20">20dp</dimen>
+    <dimen name="d21">21dp</dimen>
+    <dimen name="d22">22dp</dimen>
+    <dimen name="d23">23dp</dimen>
+    <dimen name="d24">24dp</dimen>
+    <dimen name="d25">25dp</dimen>
+    <dimen name="d26">26dp</dimen>
+    <dimen name="d27">27dp</dimen>
+    <dimen name="d27_5">27.5dp</dimen>
+    <dimen name="d28">28dp</dimen>
+    <dimen name="d30">30dp</dimen>
+    <dimen name="d32">32dp</dimen>
+    <dimen name="d34">34dp</dimen>
+    <dimen name="d35">35dp</dimen>
+    <dimen name="d36">36dp</dimen>
+    <dimen name="d37">37dp</dimen>
+    <dimen name="d38">38dp</dimen>
+    <dimen name="d40">40dp</dimen>
+    <dimen name="d43">43dp</dimen>
+    <dimen name="d44">44dp</dimen>
+    <dimen name="d45">45dp</dimen>
+    <dimen name="d46">46dp</dimen>
+    <dimen name="d48">48dp</dimen>
+    <dimen name="d50">50dp</dimen>
+    <dimen name="d51">51dp</dimen>
+    <dimen name="d54">54dp</dimen>
+    <dimen name="d55">55dp</dimen>
+    <dimen name="d56">56dp</dimen>
+    <dimen name="d59">59dp</dimen>
+    <dimen name="d60">60dp</dimen>
+    <dimen name="d63">63dp</dimen>
+    <dimen name="d64">64dp</dimen>
+    <dimen name="d65">65dp</dimen>
+    <dimen name="d70">70dp</dimen>
+    <dimen name="d73">73dp</dimen>
+    <dimen name="d74">74dp</dimen>
+    <dimen name="d78">78dp</dimen>
+    <dimen name="d80">80dp</dimen>
+    <dimen name="d88">88dp</dimen>
+    <dimen name="d95">95dp</dimen>
+    <dimen name="d100">100dp</dimen>
+    <dimen name="d110">110dp</dimen>
+    <dimen name="d120">120dp</dimen>
+    <dimen name="d130">130dp</dimen>
+    <dimen name="d140">140dp</dimen>
+    <dimen name="d200">200dp</dimen>
+    <dimen name="d280">280dp</dimen>
+    <!-- sp -->
+    <dimen name="s10">10sp</dimen>
+    <dimen name="s11">11sp</dimen>
+    <dimen name="s12">12sp</dimen>
+    <dimen name="s13">13sp</dimen>
+    <dimen name="s14">14sp</dimen>
+    <dimen name="s15">15sp</dimen>
+    <dimen name="s16">16sp</dimen>
+    <dimen name="s17">17sp</dimen>
+    <dimen name="s18">18sp</dimen>
+    <dimen name="s20">20sp</dimen>
+    <dimen name="s24">24sp</dimen>
+    <dimen name="s40">40sp</dimen>
+    <!-- 圆角相关 -->
+    <dimen name="radius_small">5dp</dimen>
+    <dimen name="radius_meddle">10dp</dimen>
+    <dimen name="radius_button_small">15dp</dimen>
+    <dimen name="radius_button">23dp</dimen>
+    <!-- 文本大小 -->
+    <dimen name="text_small">12sp</dimen>
+    <dimen name="text_meddle">14sp</dimen>
+    <dimen name="text_large">16sp</dimen>
+    <dimen name="text_large2">22sp</dimen>
+    <dimen name="text_price">30sp</dimen>
+    <!-- 用户相关 -->
+    <dimen name="avatar_width_small">30dp</dimen>
+    <dimen name="avatar_width_meddle">40dp</dimen>
+    <dimen name="avatar_width_meddle2">50dp</dimen>
+    <dimen name="avatar_width60">60dp</dimen>
+    <dimen name="avatar_width">80dp</dimen>
+    <!-- 按钮相关 -->
+    <dimen name="button_width_small">80dp</dimen>
+    <dimen name="button_width_large">130dp</dimen>
+    <dimen name="button_height_small">30dp</dimen>
+    <dimen name="button_height">46dp</dimen>
+    <dimen name="button_height_large">50dp</dimen>
+    <dimen name="button_width">100dp</dimen>
+    <!-- 图标高度 -->
+    <dimen name="icon_height">24dp</dimen>
+    <!-- 歌单详情音乐Item高度 -->
+    <dimen name="item_song_height">55dp</dimen>
+    <!-- 阴影大小 -->
+    <dimen name="elevation">10dp</dimen>
+    <!-- 小间歇 -->
+    <dimen name="padding_small1">1dp</dimen>
+    <dimen name="padding_small">5dp</dimen>
+    <!-- 中间歇 -->
+    <dimen name="padding_meddle">10dp</dimen>
+    <!-- 边距间歇 -->
+    <dimen name="padding_outer">16dp</dimen>
+    <!-- 大间歇 -->
+    <dimen name="padding_large">20dp</dimen>
+    <!-- 行高 -->
+    <item name="line_space" format="float" type="dimen">1.2</item>
+    <!-- 音乐大通知高度 -->
+    <dimen name="notification_height_meddle">120dp</dimen>
+    <!-- 分割线相关 -->
+    <dimen name="divider_small">0.5dp</dimen>
+    <dimen name="divider_small1">1dp</dimen>
+    <dimen name="divider_meddle">10dp</dimen>
+    <dimen name="divider_comment_reply">2dp</dimen>
+    <!-- 黑胶唱片 -->
+    <dimen name="button_control_height">60dp</dimen>
+    <dimen name="music_seek_bar_height">2dp</dimen>
+    <dimen name="button_play_height">80dp</dimen>
+    <dimen name="button_play_large_height">100dp</dimen>
+    <!-- 视频 -->
+    <dimen name="item_video_height">200dp</dimen>
+    <dimen name="video_container_height">230dp</dimen>
+    <!-- Item高度 -->
+    <dimen name="title_height">50dp</dimen>
+    <dimen name="title_height_small">30dp</dimen>
+    <dimen name="song_banner_width">90dp</dimen>
+    <!-- 动态 -->
+    <dimen name="publish_message_edit_text_height">150dp</dimen>
+    <!-- 文本大小 -->
+    <dimen name="super_text_small">12sp</dimen>
+    <dimen name="super_text_meddle">15sp</dimen>
+    <dimen name="super_text_large">16sp</dimen>
+    <dimen name="super_text_large2">22sp</dimen>
+    <dimen name="super_text_price">30sp</dimen>
+    <!-- 按钮相关 -->
+    <dimen name="super_button_height">55dp</dimen>
+    <dimen name="widget_padding_start">@dimen/padding_meddle</dimen>
+</resources>

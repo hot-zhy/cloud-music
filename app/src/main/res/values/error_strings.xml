@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 网络相关 -->
+    <string name="error_network_unknown_host">找不到服务器</string>
+    <string name="error_network_connect">连接服务器失败</string>
+    <string name="error_network_timeout">连接服务器超时</string>
+    <string name="error_network_not_auth">登录信息过期</string>
+    <string name="error_network_not_permission">你没有权限访问</string>
+    <string name="error_network_not_found">你访问的内容不存在</string>
+    <string name="error_network_server">服务器错误</string>
+    <string name="error_unknown">未知错误</string>
+    <string name="error_unknown_format">未知错误: %1$s</string>
+    <string name="network_error_click_reload">你的网络好像不给力，点击屏幕重试</string>
+    <string name="network_error">你的网络好像不给力</string>
+    <string name="error_parameter">本地参数错误</string>
+    <string name="error_upload_file">上传文件错误</string>
+</resources>

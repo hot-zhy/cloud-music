@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/CloudMusic/app/src/main/res/drawable/add.xml" value="0.137" />
+        <entry key="..\:/CloudMusic/app/src/main/res/layout/activity_main.xml" value="0.11895910780669144" />
+        <entry key="..\:/CloudMusic/app/src/main/res/layout/activity_music_player.xml" value="0.19202898550724637" />
+        <entry key="..\:/CloudMusic/app/src/main/res/layout/activity_simple_player.xml" value="0.2" />
+        <entry key="..\:/CloudMusic/app/src/main/res/layout/activity_start.xml" value="0.2" />
+        <entry key="..\:/CloudMusic/app/src/main/res/layout/divider.xml" value="0.17255434782608695" />
+        <entry key="..\:/CloudMusic/app/src/main/res/layout/feed.xml" value="0.17255434782608695" />
+        <entry key="..\:/CloudMusic/app/src/main/res/layout/fragment_discover.xml" value="0.20471014492753623" />
+        <entry key="..\:/CloudMusic/app/src/main/res/layout/fragment_my.xml" value="0.17255434782608695" />
+        <entry key="..\:/CloudMusic/app/src/main/res/layout/item_song.xml" value="0.264" />
+        <entry key="..\:/CloudMusic/app/src/main/res/layout/toolbar.xml" value="0.17760416666666667" />
+        <entry key="..\:/CloudMusic/app/src/main/res/layout/toolbar_transparent.xml" value="0.22604166666666667" />
+        <entry key="..\:/CloudMusic/app/src/main/res/layout/view_record_page.xml" value="0.20108695652173914" />
+        <entry key="..\:/CloudMusic/app/src/main/res/layout/view_small_music_control.xml" value="0.264" />
+        <entry key="..\:/CloudMusic/app/src/main/res/menu/discovert.xml" value="0.18072916666666666" />
+        <entry key="..\:/CloudMusic/app/src/main/res/menu/discovery.xml" value="0.18072916666666666" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

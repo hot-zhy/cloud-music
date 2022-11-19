@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--主要用来实现标题折叠功能-->
+<com.google.android.material.appbar.AppBarLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:theme="@style/SuperTheme.AppBarOverlay.Dark"
+    android:elevation="0dp">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:popupTheme="@style/SuperTheme.PopupOverlay"/>
+
+
+</com.google.android.material.appbar.AppBarLayout>
