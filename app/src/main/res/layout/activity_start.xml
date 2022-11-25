@@ -4,14 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".StartActivity">
+    tools:context=".StartActivity"
+    android:background="@color/primary">
 
 <!--    banner-->
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/d100"
+        android:layout_height="500dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="@dimen/d20"
         android:src="@drawable/splash_banner" />
 
     <ImageView
@@ -27,7 +28,7 @@
     <TextView
         android:id="@+id/copyright"
         android:textSize="@dimen/text_small"
-        android:textColor="@color/black80"
+        android:textColor="@color/white"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
         android:text="@string/copyright"

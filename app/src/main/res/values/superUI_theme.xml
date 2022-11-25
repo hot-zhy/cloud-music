@@ -24,5 +24,30 @@
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">@dimen/radius_meddle</item>
     </style>
+<!--    //设置容器-->
+    <style name="SuperSettingContainer">
+        <item name="android:layout_marginTop">@dimen/d0_5</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingStart">@dimen/d16</item>
+        <item name="android:paddingRight">@dimen/d16</item>
+        <item name="android:paddingTop">@dimen/d15</item>
+        <item name="android:paddingBottom">@dimen/d15</item>
+        <item name="background">@color/white</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="Wrap">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="SuperSettingValueSmall">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/super_light_grey</item>
+        <item name="android:textSize">@dimen/super_text_small</item>
+    </style>
+
+
 
 </resources>

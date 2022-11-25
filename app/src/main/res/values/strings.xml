@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Eason</string>
+    <string name="app_name">山高流水</string>
     <string name="copyright">Copyright © %d.All Rights Reserved.</string>
     <string name="permission_hint">不同意获取权限就无法使用~</string>
     <string name="allow">授权</string>

@@ -8,7 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <!--主色调-->
-    <color name="primary">#0070C0</color>
+    <color name="primary">#548737</color>
     <color name="primary30">#a92e29</color>
 
     <!--主色调，亮一点，主要用在主色调checkbox，默认选中时-->

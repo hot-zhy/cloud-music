@@ -28,57 +28,6 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"/>
-
-        <!--迷你控制容器-->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/button_control_height"
-            android:orientation="horizontal">
-            <!--点赞按钮-->
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="@dimen/button_control_height"
-                android:layout_weight="1"
-                android:background="@null"
-                android:src="@drawable/ic_like" />
-
-            <!--下载按钮-->
-            <ImageView
-                android:id="@+id/download"
-                android:layout_width="0dp"
-                android:layout_height="@dimen/button_control_height"
-                android:layout_weight="1"
-                android:background="@null"
-                android:src="@drawable/ic_download" />
-
-            <!--均衡器按钮-->
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="@dimen/button_control_height"
-                android:layout_weight="1"
-                android:background="@null"
-                android:src="@drawable/ic_eq" />
-
-            <!--评论按钮-->
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="@dimen/button_control_height"
-                android:layout_weight="1"
-                android:background="@null"
-                android:src="@drawable/ic_comment_count" />
-
-            <!--更多按钮-->
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="@dimen/button_control_height"
-                android:layout_weight="1"
-                android:background="@null"
-                android:padding="@dimen/padding_meddle"
-                android:scaleType="centerInside"
-                android:src="@drawable/ellipsis_vertical"
-                app:tint="@color/white" />
-        </LinearLayout>
-
         <!--进度容器-->
         <LinearLayout
             android:layout_width="match_parent"

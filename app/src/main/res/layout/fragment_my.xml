@@ -1,10 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <TextView
-        android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/black183">
+    <!--        水平居中-->
+    <LinearLayout
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="my"/>
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/d40"
+        android:layout_marginBottom="@dimen/d20"
+        >
+<!--        头像-->
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/icon"
+            android:layout_width="@dimen/d80"
+            android:layout_height="@dimen/d80"
+            android:scaleType="centerCrop"
+            app:shapeAppearanceOverlay="@style/RoundCornerImageStyle"
+            app:srcCompat="@drawable/default_avatar"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/nickname"
+            android:layout_marginTop="@dimen/d10"
+            android:textColor="?attr/colorOnSurface"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            tools:text="点击登录"/>
+<!--        设置-->
+        <LinearLayout
+            style="@style/SuperSettingContainer"
+            android:layout_marginTop="@dimen/d40">
+            <ImageView
+                app:tint="?attr/colorOnSurface"
+                android:layout_width="@dimen/d20"
+                android:layout_height="@dimen/d20"
+                android:src="@drawable/setting"
+                />
+<!--            以权重的方式占据剩余的空间-->
+            <TextView
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="@dimen/super_text_large"
+                android:layout_marginLeft="@dimen/padding_meddle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/setting"/>
+            <ImageView
+                app:tint="@color/super_light_grey"
+                android:layout_width="@dimen/d20"
+                android:layout_height="@dimen/d20"
+                android:src="@drawable/super_chevron_right"
+                />
 
-</LinearLayout>
+        </LinearLayout>
+<!--        夜间模式-->
+        <LinearLayout
+            style="@style/SuperSettingContainer">
+            <ImageView
+                app:tint="?attr/colorOnSurface"
+                android:layout_width="@dimen/d20"
+                android:layout_height="@dimen/d20"
+                android:src="@drawable/dark"
+                />
+            <!--            以权重的方式占据剩余的空间-->
+            <TextView
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="@dimen/super_text_large"
+                android:layout_marginLeft="@dimen/padding_meddle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/dark_mode"/>
+            <Switch
+                style="@style/Wrap"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+
+        </LinearLayout>
+<!--        边听便缓存-->
+        <LinearLayout
+            style="@style/SuperSettingContainer">
+            <ImageView
+                app:tint="?attr/colorOnSurface"
+                android:layout_width="@dimen/d20"
+                android:layout_height="@dimen/d20"
+                android:src="@drawable/cache"
+                />
+            <!--            以权重的方式占据剩余的空间-->
+            <TextView
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="@dimen/super_text_large"
+                android:layout_marginLeft="@dimen/padding_meddle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/cache_while_list"/>
+
+
+            <TextView
+                style="@style/SuperSettingValueSmall"
+                android:text="@string/not_open"/>
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</ScrollView>
