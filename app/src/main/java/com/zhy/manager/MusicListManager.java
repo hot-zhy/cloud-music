@@ -5,11 +5,13 @@ import android.media.MediaPlayer;
 import android.util.Log;
 
 import com.zhy.model.Song;
+import com.zhy.model.event.MusicPlayListChangedEvent;
 import com.zhy.util.LiteORMUtil;
 import com.zhy.util.PreferenceUtil;
 import com.zhy.util.ResourceUtil.ResourceUtil;
 
 import org.apache.commons.lang3.StringUtils;
+import org.greenrobot.eventbus.EventBus;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -287,5 +289,48 @@ public class MusicListManager implements MusicPlayerListener {
             resume();
         }
         musicPlayerManager.seekTo(data);
+    }
+
+    /**
+     * 从列表管理器中删除某一首音乐
+     * @param position
+     */
+    public void delete(int position) {
+        Song song=datum.get(position);
+        if(song.getId().equals(data.getId())){
+            pause();
+            Song next=next();
+            if(next!=null){
+                play(next);
+            }
+        }
+        datum.remove(position);
+        //从数据库中删除
+        orm.deleteSong(song);
+
+        sendPlayListChangedEvent(position);
+
+    }
+
+    /**
+     * 点击删除所有比方列表的音乐
+     */
+    public void deleteAll() {
+        if(musicPlayerManager.isPlaying()){
+            pause();
+        }
+        //清空播放管理器中的列表
+        datum.clear();
+        orm.deleteAllSong();
+
+        sendPlayListChangedEvent(-1);
+    }
+
+    /**
+     * 发出一个通知给外界
+     * @param i
+     */
+    private void sendPlayListChangedEvent(int i) {
+        EventBus.getDefault().post(new MusicPlayListChangedEvent(i));
     }
 }

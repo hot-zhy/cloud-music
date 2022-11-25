@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.listener.OnItemChildClickListener;
 import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.zhy.adapter.MusicPlayListAdapter;
@@ -55,6 +56,37 @@ public class MusicPlayListDialogFragment extends BaseViewModelBottomSheetDialogF
                 getMusicListManager().play(getMusicListManager().getDatum().get(position));
             }
         });
+        //item中子控件点击
+        //删除按钮点击
+        adapter.addChildClickViewIds(R.id.delete);
+        adapter.setOnItemChildClickListener(new OnItemChildClickListener() {
+            @Override
+            public void onItemChildClick(@NonNull BaseQuickAdapter<?, ?> adapter, @NonNull View view, int position) {
+                if(R.id.delete==view.getId()){
+                    //删除按钮点击
+                    removeItem(position);
+                }
+            }
+        });
+        //删除所有按钮点击
+        binding.deleteAll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dismiss();
+                getMusicListManager().deleteAll();
+            }
+        });
+    }
+
+    /**
+     * 删除播放列表的某一首音乐
+     * @param position
+     */
+    private void removeItem(int position) {
+        adapter.removeAt(position);
+        //从列表管理器中删除
+        getMusicListManager().delete(position);
+        showCount();
     }
 
     private void showCount() {

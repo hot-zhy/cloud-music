@@ -21,12 +21,16 @@ import com.zhy.manager.MusicListManager;
 import com.zhy.manager.MusicPlayerListener;
 import com.zhy.manager.MusicPlayerManager;
 import com.zhy.model.Song;
+import com.zhy.model.event.MusicPlayListChangedEvent;
 import com.zhy.super_ja.SuperDateUtil;
 import com.zhy.util.ImageUtil;
 import com.zhy.util.ResourceUtil.ResourceUtil;
 import com.zhy.zhycloudmusic.databinding.ActivityMusicPlayerBinding;
 
 import org.apache.commons.lang3.StringUtils;
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import jp.wasabeef.glide.transformations.BlurTransformation;
 
@@ -47,6 +51,7 @@ public class MusicPlayerActivity extends BaseTitleActivity<ActivityMusicPlayerBi
     @Override
     protected void initDatum() {
         super.initDatum();
+        EventBus.getDefault().register(this);
         musicPlayerManager=MusicPlayerManager.getInstance(getHostActivity());
     }
 
@@ -149,6 +154,12 @@ public class MusicPlayerActivity extends BaseTitleActivity<ActivityMusicPlayerBi
         musicPlayerManager.addMusicPlayerListener(this);
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        musicPlayerManager.removeMusicPlayerListener(this);
+    }
+
     /**
      * 显示初始化数据
      */
@@ -244,6 +255,24 @@ public class MusicPlayerActivity extends BaseTitleActivity<ActivityMusicPlayerBi
         binding.start.setText(SuperDateUtil.ms2ms(progress));
         //将进度设置到播放条上去
         binding.progress.setProgress(progress);
+    }
+
+    /**
+     * 音乐播放列表改变事件
+     * @param event
+     */
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void musicPlayListChangedEvent(MusicPlayListChangedEvent event){
+        if(getMusicListManager().getDatum().isEmpty()){
+            //没有音乐了，关闭界面
+            finish();
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        EventBus.getDefault().unregister(this);
     }
 
 
