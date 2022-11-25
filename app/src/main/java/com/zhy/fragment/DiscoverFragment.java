@@ -3,6 +3,9 @@ package com.zhy.fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 
 import androidx.annotation.NonNull;
@@ -20,6 +23,7 @@ import com.zhy.manager.MusicListManager;
 import com.zhy.model.SearchHistory;
 import com.zhy.model.Song;
 import com.zhy.model.response.ListResonse;
+import com.zhy.superUI.reflect.toast.SuperToast;
 import com.zhy.util.LiteORMUtil;
 import com.zhy.zhycloudmusic.BaseViewModeActivity;
 import com.zhy.zhycloudmusic.R;
@@ -37,6 +41,8 @@ public class DiscoverFragment extends BaseViewModelFragment<FragmentDiscoverBind
     @Override
     protected void initViews() {
         super.initViews();
+        //有顶部菜单menu
+        setHasOptionsMenu(true);
         binding.list.setHasFixedSize(true);
 
         LinearLayoutManager layoutManager=new LinearLayoutManager(getHostActivity());
@@ -111,6 +117,30 @@ public class DiscoverFragment extends BaseViewModelFragment<FragmentDiscoverBind
             }
 
         });
+    }
+
+
+    /**
+     * 创建toolbar上的更多按钮
+     * @param menu
+     * @return
+     */
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        inflater.inflate(R.menu.discovery,menu);
+    }
+
+
+//    监听toolbar按钮点击事件
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if(item.getItemId()==R.id.add){
+            SuperToast.show("点击了添加");
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 

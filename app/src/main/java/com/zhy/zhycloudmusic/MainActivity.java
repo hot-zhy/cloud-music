@@ -121,27 +121,6 @@ public class MainActivity extends BaseTitleActivity<ActivityMainBinding> {
         binding.musicControl.setOnClickListener(v -> startMusicPlayerActivity());
     }
 
-    /**
-     * 创建toolbar上的更多按钮
-     * @param menu
-     * @return
-     */
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.discovery,menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-
-//    监听toolbar按钮点击事件
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if(item.getItemId()==R.id.add){
-            SuperToast.show("点击了添加");
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
 
     @Override
     protected void onResume() {
