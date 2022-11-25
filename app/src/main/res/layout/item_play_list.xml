@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/item_song_height"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_weight="1"
+        android:textColor="@color/black32"
+        android:text="歌曲名称"/>
+    <ImageView
+        android:id="@+id/delete"
+        android:layout_width="@dimen/d55"
+        android:layout_height="@dimen/d55"
+        android:padding="@dimen/d16"
+        android:src="@drawable/close"/>
+</LinearLayout>

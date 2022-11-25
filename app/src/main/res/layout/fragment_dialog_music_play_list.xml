@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+<!--    水平容器-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_song_height"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="@dimen/d20"
+            android:layout_height="@dimen/d20"
+            android:layout_marginLeft="@dimen/d16"
+            android:src="@drawable/play"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/loop_model"
+            android:layout_marginLeft="10dp"
+            android:text="列表循环"
+            android:textColor="?attr/colorOnSurface"/>
+        <TextView
+            android:id="@+id/count"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="(0)"
+            android:textColor="@color/black80">
+
+        </TextView>
+        <include layout="@layout/divider_small_vertical"/>
+        <ImageView
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:id="@+id/delete_all"
+            android:background="@null"
+            android:padding="16dp"
+            android:src="@drawable/close"/>
+    </LinearLayout>
+    <include layout="@layout/divider"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/list"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+
+</LinearLayout>

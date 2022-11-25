@@ -4,14 +4,19 @@ plugins {
 
 android {
     compileSdk 32
+    buildFeatures{
+        dataBinding true
+    }
 
     viewBinding {
         enabled = true
     }
-
+    dataBinding{
+        enabled=true
+    }
     defaultConfig {
         applicationId "com.zhy.zhycloudmusic"
-        minSdk 16
+        minSdk 23
         targetSdk 32
         versionCode 1
         versionName "1.0"
@@ -98,6 +103,10 @@ dependencies {
 
     //圆形图形控件
     implementation 'de.hdodenhof:circleimageview:+'
+
+    //实现高斯模糊效果Blur
+    //github.com/wasabeef/glide-transformations
+    implementation 'jp.wasabeef:glide-transformations:+'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

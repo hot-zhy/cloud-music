@@ -1,20 +1,34 @@
 package com.zhy.zhycloudmusic;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.SeekBar;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.RequestBuilder;
+import com.bumptech.glide.request.RequestOptions;
+import com.bumptech.glide.request.target.CustomTarget;
+import com.bumptech.glide.request.transition.Transition;
 import com.qmuiteam.qmui.util.QMUIStatusBarHelper;
+import com.zhy.fragment.MusicPlayListDialogFragment;
 import com.zhy.manager.MusicListManager;
 import com.zhy.manager.MusicPlayerListener;
 import com.zhy.manager.MusicPlayerManager;
 import com.zhy.model.Song;
 import com.zhy.super_ja.SuperDateUtil;
 import com.zhy.util.ImageUtil;
+import com.zhy.util.ResourceUtil.ResourceUtil;
 import com.zhy.zhycloudmusic.databinding.ActivityMusicPlayerBinding;
+
+import org.apache.commons.lang3.StringUtils;
+
+import jp.wasabeef.glide.transformations.BlurTransformation;
 
 /**
  * 黑胶唱片界面
@@ -89,7 +103,7 @@ public class MusicPlayerActivity extends BaseTitleActivity<ActivityMusicPlayerBi
         binding.listButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                MusicPlayListDialogFragment.show(getSupportFragmentManager());
             }
         });
 //        设置拖拽进度空间的监听器
@@ -148,8 +162,37 @@ public class MusicPlayerActivity extends BaseTitleActivity<ActivityMusicPlayerBi
          */
         toolbar.setSubtitle(data.getSinger().getNickname());
         /**
-         * 显示背景
+         * 将背景设置为高斯模糊效果
          */
+        RequestBuilder<Drawable> requestBuilder = Glide.with(this).asDrawable();
+        if(StringUtils.isBlank(data.getIcon())){
+            //使用默认封面图
+            requestBuilder.load(R.drawable.default_cover);
+        }else{
+            //使用真实的图片
+            requestBuilder.load(ResourceUtil.resourceUri(data.getIcon()));
+        }
+        //实现高斯模糊
+        RequestOptions requestOptions = RequestOptions.bitmapTransform(new BlurTransformation(25,3));
+        //加载图片
+        requestBuilder.apply(requestOptions)
+                        .into(new CustomTarget<Drawable>() {
+                            /**
+                             * 图片加载完成
+                             * @param resource
+                             * @param transition
+                             */
+                            @Override
+                            public void onResourceReady(@NonNull Drawable resource, @Nullable Transition<? super Drawable> transition) {
+                                //将背景图片设置为高斯模糊后的照片
+                                binding.background.setImageDrawable(resource);
+                            }
+
+                            @Override
+                            public void onLoadCleared(@Nullable Drawable placeholder) {
+
+                            }
+                        });
         ImageUtil.show(binding.record.binding.icon,data.getIcon());
     }
 
