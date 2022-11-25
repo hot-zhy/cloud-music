@@ -30,10 +30,11 @@
             android:textColor="?attr/colorOnSurface"
             android:textSize="22sp"
             android:textStyle="bold"
-            tools:text="点击登录"/>
+            android:text="点击登录"/>
 <!--        设置-->
         <LinearLayout
             style="@style/SuperSettingContainer"
+            android:id="@+id/setting"
             android:layout_marginTop="@dimen/d40">
             <ImageView
                 app:tint="?attr/colorOnSurface"
@@ -109,6 +110,72 @@
 
 
         </LinearLayout>
+        <LinearLayout
+            android:id="@+id/service"
+            style="@style/SuperSettingContainer"
+            android:layout_marginTop="@dimen/d10">
+            <ImageView
+                app:tint="?attr/colorOnSurface"
+                android:layout_width="@dimen/d20"
+                android:layout_height="@dimen/d20"
+                android:src="@drawable/service"
+                />
+            <!--            以权重的方式占据剩余的空间-->
+            <TextView
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="@dimen/super_text_large"
+                android:layout_marginLeft="@dimen/padding_meddle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/my_customer_service"/>
+            <ImageView
+                app:tint="@color/super_light_grey"
+                android:layout_width="@dimen/d20"
+                android:layout_height="@dimen/d20"
+                android:src="@drawable/super_chevron_right"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/about"
+            style="@style/SuperSettingContainer">
+            <ImageView
+                app:tint="?attr/colorOnSurface"
+                android:layout_width="@dimen/d20"
+                android:layout_height="@dimen/d20"
+                android:src="@drawable/about"
+                />
+            <!--            以权重的方式占据剩余的空间-->
+            <TextView
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="@dimen/super_text_large"
+                android:layout_marginLeft="@dimen/padding_meddle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/about"/>
+            <ImageView
+                app:tint="@color/super_light_grey"
+                android:layout_width="@dimen/d20"
+                android:layout_height="@dimen/d20"
+                android:src="@drawable/super_chevron_right"
+                />
+
+        </LinearLayout>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/primary"
+            android:layout_marginTop="@dimen/d40"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/d20"
+            android:text="@string/logout"
+            app:cornerRadius="@dimen/d27_5"
+            android:height="@dimen/d55">
+
+        </com.google.android.material.button.MaterialButton>
+
     </LinearLayout>
 
 
