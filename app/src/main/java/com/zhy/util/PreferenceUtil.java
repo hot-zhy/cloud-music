@@ -80,4 +80,12 @@ public class PreferenceUtil {
     public void setSession(String data) {
         preferences.edit().putString(SESSION,data).apply();
     }
+
+    /**
+     * 判断用户是否登录
+     * @return
+     */
+    public boolean isLogin() {
+        return !getUserId().equals(Constant.ANONYMOUS);
+    }
 }

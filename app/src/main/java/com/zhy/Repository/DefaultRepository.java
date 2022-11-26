@@ -15,6 +15,9 @@ import io.reactivex.rxjava3.schedulers.Schedulers;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 
+/**
+ * 定义API
+ */
 public class DefaultRepository {
     private static DefaultRepository instance;
     private final DefaultService service;
@@ -51,5 +54,13 @@ public class DefaultRepository {
 
     public Observable<DetailResponse<Session>> login(User data){
         return service.login(data);
+    }
+    /**
+     * 用户详情
+     */
+    public Observable<DetailResponse<User>> userDetail(String data) {
+        return service.userDetail(data)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread());
     }
 }

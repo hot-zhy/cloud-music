@@ -54,4 +54,24 @@ public class ImageUtil {
         return options;
     }
 
+    /**
+     * 显示头像
+     * @param view
+     * @param data
+     */
+    public static void showAvatar(ImageView view, String data) {
+        if(TextUtils.isEmpty(data)){
+            //出错时显示默认图片
+            view.setImageResource(R.drawable.default_avatar);
+            return;
+        }
+        if(!data.startsWith("http")){
+            //相对路径
+            //将图片相对路径转化为绝对路径
+            data= ResourceUtil.resourceUri(data);
+        }
+//        显示绝对路径
+        showFull(view,data);
+    }
+
 }

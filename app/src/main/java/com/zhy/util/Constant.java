@@ -7,4 +7,5 @@ public class Constant {
      * 每16ms旋转的角度
      */
     public static final float ROTATION_PER = 0.2304F;
+    public static final String ID = "id";
 }

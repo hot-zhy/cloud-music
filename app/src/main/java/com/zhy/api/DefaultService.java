@@ -45,4 +45,12 @@ public interface DefaultService {
      */
     @POST("v1/sessions")
     Observable<DetailResponse<Session>> login(@Body User data);
+
+    /**
+     * 用户详情
+     * @param data
+     * @return
+     */
+    @GET("v1/users/{data}")
+    Observable<DetailResponse<User>> userDetail(@Path("data") String data);
 }
