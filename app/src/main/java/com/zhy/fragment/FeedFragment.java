@@ -6,11 +6,15 @@ import com.zhy.Repository.DefaultRepository;
 import com.zhy.adapter.FeedAdapter;
 import com.zhy.api.HttpObserver;
 import com.zhy.model.Feed;
+import com.zhy.model.event.LoginStatusChangedEvent;
 import com.zhy.model.response.ListResonse;
 import com.zhy.zhycloudmusic.BaseViewModeActivity;
 import com.zhy.zhycloudmusic.R;
 import com.zhy.zhycloudmusic.databinding.FragmentDiscoverBinding;
 import com.zhy.zhycloudmusic.databinding.FragmentFeedBinding;
+
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.HashMap;
 
@@ -20,6 +24,11 @@ import java.util.HashMap;
  */
 public class FeedFragment extends BaseViewModelFragment<FragmentFeedBinding> {
     private FeedAdapter adapter;
+
+    @Override
+    protected boolean isRegisterEventBus() {
+        return true;
+    }
 
     @Override
     protected void initViews() {
@@ -48,6 +57,16 @@ public class FeedFragment extends BaseViewModelFragment<FragmentFeedBinding> {
                         adapter.setNewInstance(data.getData().getData());
                     }
                 });
+    }
+
+
+    /**
+     * 登录状态改变了,重新加载一次数据
+     * @return
+     */
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void LoginStatusChangedEvent(LoginStatusChangedEvent event){
+        loadData();
     }
 
     public static FeedFragment newInstance() {

@@ -12,6 +12,7 @@ import androidx.emoji.text.EmojiCompat;
 import com.zhy.manager.MusicListManager;
 import com.zhy.manager.MyActivityManager;
 import com.zhy.model.Session;
+import com.zhy.model.event.LoginStatusChangedEvent;
 import com.zhy.superUI.reflect.toast.SuperToast;
 import com.zhy.util.LiteORMUtil;
 import com.zhy.util.PreferenceUtil;
@@ -50,11 +51,16 @@ public class AppContext extends Application implements Application.ActivityLifec
         //退出以后要销毁播放列表和数据库的实例,在创建时是新的实例，新的实例数据之间有隔离
         MusicListManager.destroy();
         LiteORMUtil.destroy();
+        LoginStatusChanged(false);
+    }
+
+    private void LoginStatusChanged(boolean isLogin) {
+        EventBus.getDefault().post(new LoginStatusChangedEvent(isLogin));
     }
 
 
     public void onLogin(Session data) {
-
+        LoginStatusChanged(true);
     }
 
     //region activity生命周期
