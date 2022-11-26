@@ -1,5 +1,10 @@
 package com.zhy.model;
 
+import org.apache.commons.lang3.StringUtils;
+
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * 动态模型
  */
@@ -43,5 +48,13 @@ public class Feed extends Common{
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public List<String> getMedias() {
+        //返回列表
+        if(StringUtils.isNotBlank(media)){
+            return Arrays.asList(media.split(","));
+        }
+        return null;
     }
 }

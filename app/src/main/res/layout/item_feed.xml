@@ -49,6 +49,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
     </LinearLayout>
+<!--    图片列表控件-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/list"
+        android:layout_marginTop="@dimen/padding_meddle"
+        android:visibility="gone"
+        >
+
+    </androidx.recyclerview.widget.RecyclerView>
     <LinearLayout
         android:padding="@dimen/padding_small"
         android:layout_width="match_parent"
