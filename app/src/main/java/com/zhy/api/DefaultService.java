@@ -9,6 +9,8 @@ import com.zhy.model.User;
 import com.zhy.model.response.DetailResponse;
 import com.zhy.model.response.ListResonse;
 
+import java.util.Map;
+
 import io.reactivex.rxjava3.core.Observable;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
@@ -16,6 +18,7 @@ import retrofit2.http.Header;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
+import retrofit2.http.QueryMap;
 
 public interface DefaultService {
     /**
@@ -31,7 +34,7 @@ public interface DefaultService {
      * 动态列表
      */
     @GET("v1/feeds")
-    Observable<ListResonse<Feed>> feeds();
+    Observable<ListResonse<Feed>> feeds(@QueryMap Map<String,String> data);
 
     /**
      * 音乐详情

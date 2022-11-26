@@ -3,11 +3,14 @@ package com.zhy.Repository;
 import com.zhy.api.DefaultService;
 import com.zhy.api.NetworkModule;
 import com.zhy.model.BaseId;
+import com.zhy.model.Feed;
 import com.zhy.model.Session;
 import com.zhy.model.Song;
 import com.zhy.model.User;
 import com.zhy.model.response.DetailResponse;
 import com.zhy.model.response.ListResonse;
+
+import java.util.Map;
 
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.core.Observable;
@@ -71,6 +74,15 @@ public class DefaultRepository {
      */
     public Observable<DetailResponse<BaseId>> register(User data) {
         return service.register(data)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread());
+    }
+
+    /**
+     * 动态列表
+     */
+    public Observable<ListResonse<Feed>> feeds(Map<String,String> data){
+        return service.feeds(data)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
     }
