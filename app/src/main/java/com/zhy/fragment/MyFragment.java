@@ -1,11 +1,14 @@
 package com.zhy.fragment;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.MediaParser;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 
+import com.zhy.AppContext;
 import com.zhy.Repository.DefaultRepository;
 import com.zhy.api.HttpObserver;
 import com.zhy.model.User;
@@ -38,7 +41,6 @@ public class MyFragment extends BaseViewModelFragment<FragmentMyBinding> {
                 //没有登录，跳转到登录界面
                 startActivity(LoginActivity.class);
             }
-            startActivity(LoginActivity.class);
         };
         /**
          * 点击图标
@@ -65,10 +67,28 @@ public class MyFragment extends BaseViewModelFragment<FragmentMyBinding> {
             Intent intent =new Intent(Intent.ACTION_DIAL,Uri.parse("tel:19933153268"));
             startActivity(intent);
         });
+        binding.primary.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showLogoutDialog();
+            }
+        });
 
     }
 
-        public static MyFragment newInstance () {
+    private void showLogoutDialog() {
+        new AlertDialog.Builder(getHostActivity())
+                .setTitle("确定要退出登录吗？")
+                .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        AppContext.getInstance().logout();
+                    }
+                })
+                .setNegativeButton("取消",null).show();
+    }
+
+    public static MyFragment newInstance () {
 
             Bundle args = new Bundle();
 
@@ -110,7 +130,7 @@ public class MyFragment extends BaseViewModelFragment<FragmentMyBinding> {
     }
 
     private void showData(User data) {
-        ImageUtil.show(binding.icon,data.getIcon());
+        ImageUtil.showAvatar(binding.icon,data.getIcon());
         binding.nickname.setText(data.getNickname());
     }
 

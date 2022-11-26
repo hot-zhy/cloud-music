@@ -65,6 +65,13 @@ public class MusicListManager implements MusicPlayerListener {
     }
 
     /**
+     * 销毁播放列表管理器
+     */
+    public static void destroy() {
+        instance=null;
+    }
+
+    /**
      * 从数据库恢复播放列表（初始化播放列表）
      */
     private void initPlayList() {

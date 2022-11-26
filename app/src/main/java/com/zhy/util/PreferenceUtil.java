@@ -88,4 +88,13 @@ public class PreferenceUtil {
     public boolean isLogin() {
         return !getUserId().equals(Constant.ANONYMOUS);
     }
+
+    public void logout() {
+        delete(USER_ID);
+        delete(SESSION);
+    }
+
+    private void delete(String data) {
+        preferences.edit().remove(data).apply();
+    }
 }

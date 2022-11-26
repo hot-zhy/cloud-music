@@ -19,7 +19,7 @@ public class ImageUtil {
     public static void show(ImageView view, String data) {
         if(TextUtils.isEmpty(data)){
             //出错时显示默认图片
-            view.setImageResource(R.drawable.placeholder_error);
+            view.setImageResource(R.drawable.default_avatar);
             return;
         }
         if(data.contains("/files/Music")){
@@ -50,7 +50,7 @@ public class ImageUtil {
     private static RequestOptions getCommonRequestOptions(){
         RequestOptions options=new RequestOptions();
 //        占位图片
-        options.error(R.drawable.placeholder_error);
+        options.error(R.drawable.default_avatar);
         return options;
     }
 
