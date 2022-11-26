@@ -1,14 +1,18 @@
 package com.zhy.api;
 
 import com.zhy.model.Feed;
+import com.zhy.model.Session;
 import com.zhy.model.Song;
 import com.zhy.model.SongWrapper;
+import com.zhy.model.User;
 import com.zhy.model.response.DetailResponse;
 import com.zhy.model.response.ListResonse;
 
 import io.reactivex.rxjava3.core.Observable;
+import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
+import retrofit2.http.POST;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 
@@ -36,4 +40,9 @@ public interface DefaultService {
      */
     @GET("v1/songs/{id}")
     Observable<DetailResponse<Song>> songDetail(@Header("testHeader") String testHeader, @Path("id") String id);
+    /**
+     * 登录
+     */
+    @POST("v1/sessions")
+    Observable<DetailResponse<Session>> login(@Body User data);
 }

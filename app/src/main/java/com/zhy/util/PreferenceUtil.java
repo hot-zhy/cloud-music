@@ -11,6 +11,7 @@ import android.preference.PreferenceManager;
 public class PreferenceUtil {
     private static final String LAST_PLAY_SONG_ID="LAST_PLAY_SONG_ID";
     private static final String USER_ID = "user_id";
+    private static final String SESSION="session";
     private static PreferenceUtil instance;
     private final Context context;
     private final SharedPreferences preferences;
@@ -64,5 +65,19 @@ public class PreferenceUtil {
      */
     public String getUserId() {
         return preferences.getString(USER_ID,Constant.ANONYMOUS);
+    }
+
+    /**
+     * 设置用户id
+     * @param data
+     */
+    public void setUserId(String data) {
+        preferences.edit().putString(USER_ID,data).apply();
+    }
+    public String getSession(){
+        return preferences.getString(SESSION,null);
+    }
+    public void setSession(String data) {
+        preferences.edit().putString(SESSION,data).apply();
     }
 }

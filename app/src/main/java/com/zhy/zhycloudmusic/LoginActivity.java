@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 
+import com.zhy.model.User;
 import com.zhy.superUI.reflect.toast.SuperToast;
 import com.zhy.super_ja.RegularUtil;
 import com.zhy.zhycloudmusic.databinding.ActivityLoginBinding;
@@ -16,7 +17,7 @@ import org.apache.commons.lang3.StringUtils;
 /**
  * 登陆界面
  */
-public class LoginActivity extends BaseTitleActivity<ActivityLoginBinding> {
+public class LoginActivity extends BaseLoginActivity<ActivityLoginBinding> {
     @Override
     protected void initListeners() {
         super.initListeners();
@@ -43,6 +44,11 @@ public class LoginActivity extends BaseTitleActivity<ActivityLoginBinding> {
                     SuperToast.show(R.string.error_password_format);
                     return;
                 }
+                User param = new User();
+                param.setPhone(phone);
+                param.setPassword(password);
+                //登录BaseLoginActivity调用接口
+                login(param);
             }
         });
 

@@ -2,7 +2,10 @@ package com.zhy.Repository;
 
 import com.zhy.api.DefaultService;
 import com.zhy.api.NetworkModule;
+import com.zhy.model.Session;
 import com.zhy.model.Song;
+import com.zhy.model.User;
+import com.zhy.model.response.DetailResponse;
 import com.zhy.model.response.ListResonse;
 
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
@@ -44,5 +47,9 @@ public class DefaultRepository {
         return service.songs("1",10)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
+    }
+
+    public Observable<DetailResponse<Session>> login(User data){
+        return service.login(data);
     }
 }

@@ -2,6 +2,7 @@ package com.zhy;
 
 import android.app.Application;
 
+import com.zhy.model.Session;
 import com.zhy.superUI.reflect.toast.SuperToast;
 
 public class AppContext extends Application {
@@ -19,6 +20,10 @@ public class AppContext extends Application {
     }
 
     public void logout() {
+
+    }
+
+    public void onLogin(Session data) {
 
     }
 }
