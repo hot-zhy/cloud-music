@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.zhy.zhycloudmusic.BaseViewModeActivity;
+import com.zhy.zhycloudmusic.LoginActivity;
 import com.zhy.zhycloudmusic.databinding.FragmentDiscoverBinding;
 import com.zhy.zhycloudmusic.databinding.FragmentMyBinding;
 
@@ -18,7 +19,7 @@ public class MyFragment extends BaseViewModelFragment<FragmentMyBinding> {
         super.initListeners();
         //用户点击
         View.OnClickListener userClick = view -> {
-
+            startActivity(LoginActivity.class);
         };
         /**
          * 点击图标

@@ -110,6 +110,9 @@ dependencies {
 
     //跨界面通信框架
     implementation 'org.greenrobot:eventbus:3.3.1'
+    //输入框
+    //github.com/Cielsk/clearable-edittext
+    implementation 'com.github.Cielsk:clearable-edittext:0.0.8'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

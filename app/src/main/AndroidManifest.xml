@@ -25,9 +25,13 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:label="Eason"
-            android:name=".MusicPlayerActivity"
+            android:label="@string/login"
+            android:name=".LoginActivity"
             android:exported="false" />
+        <activity
+            android:name=".MusicPlayerActivity"
+            android:exported="false"
+            android:label="Vae" />
         <activity
             android:name=".SimplePlayerActivity"
             android:exported="false"

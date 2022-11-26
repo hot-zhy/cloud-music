@@ -48,6 +48,36 @@
         <item name="android:textSize">@dimen/super_text_small</item>
     </style>
 
+<!--通用输入框-->
+<!--    多行输入框，只有底部有边框-->
+    <style name="EditText">
+        <item name="android:drawablePadding">@dimen/padding_meddle</item>
+        <item name="android:paddingStart">@dimen/padding_meddle</item>
+        <item name="android:paddingRight">@dimen/padding_meddle</item>
+        <item name="android:paddingTop">@dimen/d13</item>
+        <item name="android:paddingBottom">@dimen/d13</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+        <item name="android:textSize">@dimen/s16</item>
+        <item name="android:background">@color/white</item>
+    </style>
+
+<!--    单行输入框-->
+    <style name="EditText.SingleLine">
+        <item name="android:maxLines">1</item>
+        <item name="android:layout_height">@dimen/d50</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:paddingBottom">0dp</item>
+        <item name="android:layout_marginTop">@dimen/padding_meddle</item>
+    </style>
+
+<!--    有边框的单行输入框-->
+    <style name="EditText.SingleLine.Border">
+        <item name="android:layout_marginTop">@dimen/padding_large</item>
+        <item name="android:background">@drawable/selector_edit_text</item>
+    </style>
+
 
 
 </resources>

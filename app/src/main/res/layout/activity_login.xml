@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity">
+    <include layout="@layout/toolbar"/>
+    <RelativeLayout
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_marginHorizontal="@dimen/padding_outer"
+
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+<!--            获取焦点才显示图标-->
+            <com.cielyang.android.clearableedittext.ClearableEditText
+                android:id="@+id/username"
+                style="@style/EditText.SingleLine.Border"
+                android:drawableStart="@drawable/input_username"
+                android:maxLength="11"
+                android:inputType="numberDecimal"
+                android:hint="请输入您的手机号"
+                app:clearIconDrawWhenFocused="true"
+                app:clearIconDrawable="@drawable/close" />
+            <com.cielyang.android.clearableedittext.ClearableEditText
+                android:inputType="textPassword"
+                android:maxLength="15"
+                android:id="@+id/password"
+                style="@style/EditText.SingleLine.Border"
+                android:drawableStart="@drawable/input_password"
+                android:hint="请输入您的密码"
+                app:clearIconDrawWhenFocused="true"
+                app:clearIconDrawable="@drawable/close" />
+<!--            登录按钮-->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/primary"
+                android:layout_marginTop="@dimen/d20"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/login"
+                app:cornerRadius="@dimen/d27_5"
+                android:height="@dimen/d55">
+
+            </com.google.android.material.button.MaterialButton>
+<!--            使用相对布局-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <Button
+                    android:layout_marginLeft="-13dp"
+                    android:id="@+id/register"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/register"
+                    android:textColor="@color/black80"
+                    style="?android:attr/borderlessButtonStyle">
+
+                </Button>
+                <Button
+                    android:layout_marginRight="-13dp"
+                    android:layout_alignParentRight="true"
+                    android:id="@+id/forget_password"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/forgot_password"
+                    android:textColor="@color/black80"
+                    style="?android:attr/borderlessButtonStyle">
+
+                </Button>
+            </RelativeLayout>
+        </LinearLayout>
+<!--        底部-->
+        <LinearLayout
+            android:layout_marginHorizontal="@dimen/d120"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/d30"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+<!--            第三方登录容器-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/wechat"
+                    android:clickable="true"
+                    android:src="@drawable/selector_login_wechat">
+
+                </ImageView>
+<!--                占用剩余空间-->
+                <include layout="@layout/fill"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/qq"
+                    android:clickable="true"
+                    android:src="@drawable/selector_login_qq">
+
+                </ImageView>
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/user_agreement"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:textSize="12sp"
+                android:text="—————第三方登录—————"/>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
