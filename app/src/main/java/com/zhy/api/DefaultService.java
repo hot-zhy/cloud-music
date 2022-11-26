@@ -1,5 +1,6 @@
 package com.zhy.api;
 
+import com.zhy.model.BaseId;
 import com.zhy.model.Feed;
 import com.zhy.model.Session;
 import com.zhy.model.Song;
@@ -53,4 +54,10 @@ public interface DefaultService {
      */
     @GET("v1/users/{data}")
     Observable<DetailResponse<User>> userDetail(@Path("data") String data);
+
+    /**
+     * 注册,返回的用户id
+     */
+    @POST("v1/users")
+    Observable<DetailResponse<BaseId>> register(@Body User data);
 }

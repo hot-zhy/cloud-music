@@ -2,6 +2,7 @@ package com.zhy.Repository;
 
 import com.zhy.api.DefaultService;
 import com.zhy.api.NetworkModule;
+import com.zhy.model.BaseId;
 import com.zhy.model.Session;
 import com.zhy.model.Song;
 import com.zhy.model.User;
@@ -53,13 +54,23 @@ public class DefaultRepository {
     }
 
     public Observable<DetailResponse<Session>> login(User data){
-        return service.login(data);
+        return service.login(data)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread());
     }
     /**
      * 用户详情
      */
     public Observable<DetailResponse<User>> userDetail(String data) {
         return service.userDetail(data)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread());
+    }
+    /**
+     * 注册
+     */
+    public Observable<DetailResponse<BaseId>> register(User data) {
+        return service.register(data)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
     }

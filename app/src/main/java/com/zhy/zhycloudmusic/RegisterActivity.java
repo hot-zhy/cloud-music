@@ -5,6 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import com.zhy.Repository.DefaultRepository;
+import com.zhy.api.HttpObserver;
+import com.zhy.model.BaseId;
+import com.zhy.model.User;
+import com.zhy.model.response.DetailResponse;
 import com.zhy.superUI.reflect.toast.SuperToast;
 import com.zhy.super_ja.RegularUtil;
 import com.zhy.zhycloudmusic.databinding.ActivityRegisterBinding;
@@ -80,7 +85,25 @@ public class RegisterActivity extends BaseLoginActivity<ActivityRegisterBinding>
                     SuperToast.show(R.string.error_confirm_password);
                     return;
                 }
+                User param=new User();
+                param.setNickname(nickname);
+                param.setPhone(phone);
+                param.setPassword(password);
+                registerClick(param);
             }
         });
+    }
+
+    private void registerClick(User data) {
+        //调用注册接口
+        DefaultRepository.getInstance()
+                .register(data)
+                .subscribe(new HttpObserver<DetailResponse<BaseId>>() {
+                    @Override
+                    public void onSucceeded(DetailResponse<BaseId> d) {
+                        //注册成功后登录
+                        login(data);
+                    }
+                });
     }
 }
