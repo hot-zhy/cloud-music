@@ -27,7 +27,7 @@
     <string name="not_open">未开启</string>
     <string name="logout">退出登录</string>
     <string name="login_or_register">登录或注册</string>
-    <string name="enter_phone">手机号</string>
+    <string name="enter_phone">请输入您的手机号</string>
     <string name="error_enter_phone">请输入手机号</string>
     <string name="enter_password">密码(6~15位)</string>
     <string name="login">登录</string>
