@@ -83,6 +83,7 @@ public class MyFragment extends BaseViewModelFragment<FragmentMyBinding> {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         AppContext.getInstance().logout();
+                        showNotLogin();
                     }
                 })
                 .setNegativeButton("取消",null).show();
