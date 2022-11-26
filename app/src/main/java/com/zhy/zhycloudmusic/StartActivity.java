@@ -1,53 +1,24 @@
 package com.zhy.zhycloudmusic;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.content.Intent;
-import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.TextView;
-import android.widget.Toast;
 
 
 import com.qmuiteam.qmui.util.QMUIStatusBarHelper;
-import com.zhy.api.DefaultService;
-import com.zhy.api.HttpObserver;
-import com.zhy.api.NetworkModule;
-import com.zhy.api.ObserverAdapter;
 import com.zhy.config.Config;
-import com.zhy.model.Feed;
-import com.zhy.model.Song;
-import com.zhy.model.SongWrapper;
-import com.zhy.model.response.DetailResponse;
-import com.zhy.model.response.ListResonse;
-import com.zhy.superUI.reflect.toast.SuperToast;
-import com.zhy.super_ja.SuperDateUtil;
+import com.zhy.util.SuperDateUtil;
 import com.zhy.zhycloudmusic.databinding.ActivityStartBinding;
 
-import java.io.IOException;
-
-import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
-import io.reactivex.rxjava3.core.Observer;
-import io.reactivex.rxjava3.core.Scheduler;
-import io.reactivex.rxjava3.disposables.Disposable;
-import io.reactivex.rxjava3.schedulers.Schedulers;
-import okhttp3.Call;
-import okhttp3.Callback;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
 import permissions.dispatcher.NeedsPermission;
 import permissions.dispatcher.OnNeverAskAgain;
 import permissions.dispatcher.OnPermissionDenied;
 import permissions.dispatcher.OnShowRationale;
 import permissions.dispatcher.PermissionRequest;
 import permissions.dispatcher.RuntimePermissions;
-import retrofit2.Retrofit;
 
 
 //声明当前页面具有动态获取权限

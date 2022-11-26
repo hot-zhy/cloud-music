@@ -89,6 +89,7 @@
     <dimen name="radius_meddle">10dp</dimen>
     <dimen name="radius_button_small">15dp</dimen>
     <dimen name="radius_button">23dp</dimen>
+    <dimen name="radius_rounded">20dp</dimen>
     <!-- 文本大小 -->
     <dimen name="text_small">12sp</dimen>
     <dimen name="text_meddle">14sp</dimen>

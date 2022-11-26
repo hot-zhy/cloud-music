@@ -22,7 +22,7 @@
     圆角
     <style name="RoundCornerImageStyle">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">@dimen/radius_meddle</item>
+        <item name="cornerSize">@dimen/radius_rounded</item>
     </style>
 <!--    //设置容器-->
     <style name="SuperSettingContainer">

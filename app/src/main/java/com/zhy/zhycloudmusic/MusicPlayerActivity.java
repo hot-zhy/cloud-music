@@ -2,11 +2,9 @@ package com.zhy.zhycloudmusic;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.SeekBar;
 
@@ -22,7 +20,7 @@ import com.zhy.manager.MusicPlayerListener;
 import com.zhy.manager.MusicPlayerManager;
 import com.zhy.model.Song;
 import com.zhy.model.event.MusicPlayListChangedEvent;
-import com.zhy.super_ja.SuperDateUtil;
+import com.zhy.util.SuperDateUtil;
 import com.zhy.util.ImageUtil;
 import com.zhy.util.ResourceUtil.ResourceUtil;
 import com.zhy.zhycloudmusic.databinding.ActivityMusicPlayerBinding;

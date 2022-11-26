@@ -6,6 +6,8 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.emoji.bundled.BundledEmojiCompatConfig;
+import androidx.emoji.text.EmojiCompat;
 
 import com.zhy.manager.MusicListManager;
 import com.zhy.manager.MyActivityManager;
@@ -24,6 +26,10 @@ public class AppContext extends Application implements Application.ActivityLifec
     public void onCreate() {
         super.onCreate();
         instance=this;
+
+        //emoji初始化
+        EmojiCompat.Config config=new BundledEmojiCompatConfig(this);
+        EmojiCompat.init(config);
 
         SuperToast.init(getApplicationContext());
         myActivityManager = MyActivityManager.getInstance();

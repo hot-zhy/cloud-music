@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="@dimen/padding_outer"
+    android:layout_width="match_parent"
+    android:background="@color/black183"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/icon"
+            android:layout_width="@dimen/avatar_width_meddle"
+            android:layout_height="@dimen/avatar_width_meddle"
+            android:scaleType="centerCrop"
+            android:src="@drawable/default_avatar"
+            app:shapeAppearanceOverlay="@style/RoundCornerImageStyle">
+
+        </com.google.android.material.imageview.ShapeableImageView>
+        <TextView
+            android:layout_marginLeft="@dimen/padding_meddle"
+            android:id="@+id/nickname"
+            android:textSize="18sp"
+            android:text="赵晗瑜"
+            android:textColor="@color/primary"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical">
+
+        </TextView>
+    </LinearLayout>
+<!--    动态内容-->
+    <LinearLayout
+        android:padding="@dimen/padding_small"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.emoji.widget.EmojiTextView
+            android:id="@+id/content"
+            android:textColor="?attr/colorOnSurface"
+            android:textSize="@dimen/s17"
+            android:lineSpacingMultiplier="1.2"
+            android:layout_marginTop="@dimen/padding_small"
+            tools:text="哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈哈哈"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <LinearLayout
+        android:padding="@dimen/padding_small"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_small"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/date"
+            android:text="12:28"
+            android:textColor="@color/black80"
+            android:textSize="14sp">
+
+        </TextView>
+        <!--删除按钮-->
+        <TextView
+            android:id="@+id/delete"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/d10"
+            android:layout_weight="1"
+            android:text="@string/delete"
+            android:textColor="@color/primary_button"
+            android:textSize="@dimen/text_meddle"
+            android:visibility="invisible" />
+
+        <!--点赞图标-->
+        <ImageView
+            android:id="@+id/like"
+            android:layout_width="@dimen/d18"
+            android:layout_height="@dimen/d18"
+            android:src="@drawable/thumb" />
+
+        <!--评论图标-->
+        <ImageView
+            android:id="@+id/comment"
+            android:layout_width="@dimen/d18"
+            android:layout_height="@dimen/d18"
+            android:layout_marginLeft="@dimen/padding_outer"
+            android:layout_marginRight="@dimen/padding_small"
+            android:src="@drawable/comment_count_small" />
+    </LinearLayout>
+
+
+
+</LinearLayout>
