@@ -16,6 +16,8 @@ import com.zhy.util.SuperDateUtil;
 import com.zhy.util.ImageUtil;
 import com.zhy.zhycloudmusic.R;
 
+import java.util.ArrayList;
+
 /**
  * 动态适配器
  */
@@ -31,11 +33,12 @@ public class FeedAdapter extends BaseQuickAdapter<Feed, BaseViewHolder> {
         holder.setText(R.id.nickname,feed.getUser().getNickname());
         holder.setText(R.id.content,feed.getContent());
         holder.setText(R.id.date, SuperDateUtil.commonFormat(feed.getCreateAt()));
+
+        //获取图片列表控件
+        RecyclerView listView = holder.getView(R.id.list);
         if(feed.getMedias()!=null&&feed.getMedias().size()>0){
             //有图片，显示图片控件
             holder.setGone(R.id.list,false);
-            //获取图片列表控件
-            RecyclerView listView = holder.getView(R.id.list);
             //计算图片显示多少列
             int spanCount=1;
             if(feed.getMedias().size()>4){
@@ -54,7 +57,19 @@ public class FeedAdapter extends BaseQuickAdapter<Feed, BaseViewHolder> {
             GridDividerItemDecoration divider = new GridDividerItemDecoration(getContext(), (int) DensityUtil.dip2px(getContext(), 5));
             listView.addItemDecoration(divider);
 //            列表控件提供数据所需适配器
-            new ImageAdapter()
+            ImageAdapter imageAdapter = new ImageAdapter(R.layout.item_image);
+            listView.setAdapter(imageAdapter);
+            ArrayList<Object> results = new ArrayList<>();
+            results.addAll(feed.getMedias());
+            //为适配器添加数据，添加数据都在具体的adapter的上一层
+            imageAdapter.setNewInstance(results);
+        }else{
+            //没有图片
+            holder.setVisible(R.id.list,true);
+//            移除适配器
+            listView.setAdapter(null);
+            listView.setLayoutManager(null);
+
         }
 
 
