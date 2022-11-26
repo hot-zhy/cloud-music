@@ -51,6 +51,7 @@ public class LoginActivity extends BaseLoginActivity<ActivityLoginBinding> {
                 login(param);
             }
         });
+        binding.register.setOnClickListener(v -> startActivity(RegisterActivity.class));
 
     }
 }
