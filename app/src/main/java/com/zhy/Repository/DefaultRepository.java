@@ -2,6 +2,7 @@ package com.zhy.Repository;
 
 import com.zhy.api.DefaultService;
 import com.zhy.api.NetworkModule;
+import com.zhy.model.Base;
 import com.zhy.model.BaseId;
 import com.zhy.model.Feed;
 import com.zhy.model.Session;
@@ -10,14 +11,19 @@ import com.zhy.model.User;
 import com.zhy.model.response.DetailResponse;
 import com.zhy.model.response.ListResonse;
 
+import java.util.List;
 import java.util.Map;
 
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.core.Observer;
+import io.reactivex.rxjava3.internal.operators.observable.ObservableError;
 import io.reactivex.rxjava3.schedulers.Schedulers;
+import okhttp3.MultipartBody;
 import okhttp3.OkHttpClient;
+import okhttp3.RequestBody;
 import retrofit2.Retrofit;
+import retrofit2.http.Part;
 
 /**
  * 定义API
@@ -91,6 +97,24 @@ public class DefaultRepository {
      */
     public Observable<DetailResponse<BaseId>> createFeed(Feed data){
         return service.createFeed(data)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread());
+    }
+
+
+    /**
+     * 上传单张图片
+     */
+    public  Observable<DetailResponse<BaseId>> uploadFile(MultipartBody.Part file, RequestBody flavor){
+        return service.uploadFile(file,flavor)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread());
+    }
+    /**
+     * 上传多张图片
+     */
+    public Observable<ListResonse<BaseId>> uploadFiles(List<MultipartBody.Part> file,RequestBody flavor){
+        return service.uploadFiles(file,flavor)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
     }

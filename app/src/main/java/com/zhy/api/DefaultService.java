@@ -10,13 +10,18 @@ import com.zhy.model.User;
 import com.zhy.model.response.DetailResponse;
 import com.zhy.model.response.ListResonse;
 
+import java.util.List;
 import java.util.Map;
 
 import io.reactivex.rxjava3.core.Observable;
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
+import retrofit2.http.Multipart;
 import retrofit2.http.POST;
+import retrofit2.http.Part;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 import retrofit2.http.QueryMap;
@@ -69,4 +74,23 @@ public interface DefaultService {
      */
     @POST("v1/users")
     Observable<DetailResponse<BaseId>> register(@Body User data);
+
+    /**
+     * 上传单张文件
+     * @param file
+     * @param flavor
+     * @return
+     */
+    @Multipart
+    @POST("v1/r")
+    Observable<DetailResponse<BaseId>> uploadFile(@Part MultipartBody.Part file, @Part("flavor")RequestBody flavor);
+    /**
+     * 上传多张文件
+     * @param file
+     * @param flavor
+     * @return
+     */
+    @Multipart
+    @POST("v1/r/multi")
+    Observable<ListResonse<BaseId>> uploadFiles(@Part List<MultipartBody.Part> file, @Part("flavor")RequestBody flavor);
 }
