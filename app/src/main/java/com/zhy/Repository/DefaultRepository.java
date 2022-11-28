@@ -86,4 +86,12 @@ public class DefaultRepository {
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
     }
+    /**
+     * 发布动态
+     */
+    public Observable<DetailResponse<BaseId>> createFeed(Feed data){
+        return service.createFeed(data)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread());
+    }
 }

@@ -1,5 +1,6 @@
 package com.zhy.api;
 
+import com.zhy.model.Base;
 import com.zhy.model.BaseId;
 import com.zhy.model.Feed;
 import com.zhy.model.Session;
@@ -49,6 +50,11 @@ public interface DefaultService {
      */
     @POST("v1/sessions")
     Observable<DetailResponse<Session>> login(@Body User data);
+    /**
+     * 发布动态,访问参数是Feed类型
+     */
+    @POST("v1/feeds")
+    Observable<DetailResponse<BaseId>> createFeed(@Body Feed data);
 
     /**
      * 用户详情

@@ -13,10 +13,12 @@ import com.zhy.adapter.FeedAdapter;
 import com.zhy.api.HttpObserver;
 import com.zhy.model.Feed;
 import com.zhy.model.Meta;
+import com.zhy.model.event.FeedChangedEvent;
 import com.zhy.model.event.LoginStatusChangedEvent;
 import com.zhy.model.response.ListResonse;
 import com.zhy.util.Constant;
 import com.zhy.zhycloudmusic.BaseViewModeActivity;
+import com.zhy.zhycloudmusic.LoginActivity;
 import com.zhy.zhycloudmusic.PublishFeedActivity;
 import com.zhy.zhycloudmusic.R;
 import com.zhy.zhycloudmusic.databinding.FragmentDiscoverBinding;
@@ -77,7 +79,13 @@ public class FeedFragment extends BaseViewModelFragment<FragmentFeedBinding> {
                 loadmore();
             }
         });
-        binding.primary.setOnClickListener(v -> startActivity(PublishFeedActivity.class));
+        binding.primary.setOnClickListener(v -> {
+           if(sp.isLogin()){
+               startActivity(PublishFeedActivity.class);
+           }else{
+               startActivity(LoginActivity.class);
+           }
+        });
     }
 
     /**
@@ -127,6 +135,15 @@ public class FeedFragment extends BaseViewModelFragment<FragmentFeedBinding> {
     public void LoginStatusChangedEvent(LoginStatusChangedEvent event){
         loadData();
     }
+    /**
+     * 动态改变了
+     * @return
+     */
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void FeedChangedEvent(FeedChangedEvent event){
+        loadData();
+    }
+
 
     public static FeedFragment newInstance() {
 

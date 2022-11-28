@@ -37,7 +37,7 @@
                 android:layout_margin="@dimen/d16"
                 android:text="0/140"
                 android:textColor="@color/black80">
-                
+
             </TextView>
         </RelativeLayout>
     </LinearLayout>
