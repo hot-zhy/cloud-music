@@ -32,6 +32,19 @@ public class Meta<T> {
     private Integer next;
     private List<T> data;
 
+    /**
+     * 获取下一页
+     * @param data
+     * @return
+     */
+    public static int nextPage(Meta data) {
+        if(data==null||data.next==null){
+            return 1;
+        }else{
+            return data.next;
+        }
+    }
+
     public Integer getTotal() {
         return total;
     }

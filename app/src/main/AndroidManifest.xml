@@ -25,9 +25,13 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".PublishFeedActivity"
+            android:exported="false"
+            android:label="@string/publish_feed"/>
+        <activity
             android:name=".RegisterActivity"
             android:exported="false"
-            android:label="注册"/>
+            android:label="注册" />
         <activity
             android:name=".UserDetailActivity"
             android:exported="false" />

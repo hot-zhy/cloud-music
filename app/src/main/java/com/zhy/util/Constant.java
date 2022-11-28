@@ -8,4 +8,5 @@ public class Constant {
      */
     public static final float ROTATION_PER = 0.2304F;
     public static final String ID = "id";
+    public static final String PAGE = "page";
 }

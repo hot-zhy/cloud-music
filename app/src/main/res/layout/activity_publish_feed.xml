@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PublishFeedActivity">
+    <include layout="@layout/toolbar"/>
+    <LinearLayout android:layout_marginTop="@dimen/padding_outer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+        android:orientation="vertical">
+<!--        输入框-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/content"
+                android:layout_marginHorizontal="@dimen/d16"
+                android:gravity="left|top"
+                android:hint="发一条动态吧~"
+                android:lineSpacingMultiplier="1.2"
+                android:maxLength="150">
+
+            </EditText>
+<!--            字数统计-->
+<!--            将文本控件通过relativeLayout定位到右侧-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/count"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="@dimen/d16"
+                android:text="0/140"
+                android:textColor="@color/black80">
+                
+            </TextView>
+        </RelativeLayout>
+    </LinearLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
