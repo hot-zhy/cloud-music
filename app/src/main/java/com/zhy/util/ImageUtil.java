@@ -33,6 +33,11 @@ public class ImageUtil {
     }
 
     public static void showLocalImage(ImageView view, String data) {
+        RequestOptions options=getCommonRequestOptions();
+        Glide.with(view.getContext())
+                .load(data)
+                .apply(options)
+                .into(view);
     }
 
     /**

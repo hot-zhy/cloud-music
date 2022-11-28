@@ -8,6 +8,7 @@ import androidx.annotation.NonNull;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.viewholder.BaseViewHolder;
+import com.luck.picture.lib.entity.LocalMedia;
 import com.zhy.util.ImageUtil;
 import com.zhy.zhycloudmusic.R;
 
@@ -24,9 +25,18 @@ public class ImageAdapter extends BaseQuickAdapter<Object, BaseViewHolder> {
     protected void convert(@NonNull BaseViewHolder holder, Object o) {
 
         ImageView iconView = holder.getView(R.id.icon);
+        holder.setGone(R.id.close,true);
         if(o instanceof String){
             String data=(String) o;
             ImageUtil.show(iconView,data);
+        }else if (o instanceof Integer){
+            //本地图片
+            iconView.setImageResource((int)o);
+        }else{
+            //选择的图片
+            LocalMedia data=(LocalMedia) o;
+            ImageUtil.showLocalImage(iconView,data.getCompressPath());
+            holder.setGone(R.id.close,false);
         }
     }
 }

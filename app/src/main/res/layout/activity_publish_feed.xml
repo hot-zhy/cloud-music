@@ -40,6 +40,15 @@
 
             </TextView>
         </RelativeLayout>
+<!--        图片列表控件-->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/d16"
+            android:layout_marginVertical="@dimen/d16">
+
+        </androidx.recyclerview.widget.RecyclerView>
     </LinearLayout>
 
 
