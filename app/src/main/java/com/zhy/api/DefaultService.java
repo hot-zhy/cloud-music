@@ -92,5 +92,5 @@ public interface DefaultService {
      */
     @Multipart
     @POST("v1/r/multi")
-    Observable<ListResonse<BaseId>> uploadFiles(@Part List<MultipartBody.Part> file, @Part("flavor")RequestBody flavor);
+    Observable<ListResonse<String>> uploadFiles(@Part List<MultipartBody.Part> file, @Part("flavor")RequestBody flavor);
 }

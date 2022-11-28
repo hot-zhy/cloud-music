@@ -31,10 +31,12 @@ import com.zhy.Repository.DefaultRepository;
 import com.zhy.adapter.ImageAdapter;
 import com.zhy.api.HttpObserver;
 import com.zhy.config.glide.GlideEngine;
+import com.zhy.model.Base;
 import com.zhy.model.BaseId;
 import com.zhy.model.Feed;
 import com.zhy.model.event.FeedChangedEvent;
 import com.zhy.model.response.DetailResponse;
+import com.zhy.model.response.ListResonse;
 import com.zhy.superUI.decoration.GridDividerItemDecoration;
 import com.zhy.superUI.reflect.toast.SuperToast;
 import com.zhy.util.DensityUtil;
@@ -49,6 +51,9 @@ import java.sql.Array;
 import java.util.ArrayList;
 import java.util.List;
 
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
 import top.zibin.luban.Luban;
 import top.zibin.luban.OnNewCompressListener;
 
@@ -189,17 +194,61 @@ public class PublishFeedActivity extends BaseTitleActivity<ActivityPublishFeedBi
             SuperToast.show("您还没有填写哦~");
             return;
         }
-        saveFeed(content);
+//        获取选中的图片
+        List<LocalMedia> selectedImages=getSelectedImages();
+        if(selectedImages.size()>0){
+            //用户选择了图片
+            //上传图片
+            uploadImages(selectedImages);
+        }else{
+//            没有图片，直接发布动态
+            saveFeed(null);
+        }
+
+    }
+
+    private void uploadImages(List<LocalMedia> selectedImages) {
+        ArrayList<MultipartBody.Part> bodyFiles = new ArrayList<>();
+        for(LocalMedia it:selectedImages){
+            File file = new File(it.getCompressPath());
+            //创建成文件表单项
+            RequestBody fileBody = RequestBody.Companion.create(file, MediaType.parse("image/*"));
+            MultipartBody.Part multipartBody = MultipartBody.Part.createFormData("file", file.getName(), fileBody);
+            bodyFiles.add(multipartBody);
+
+        }
+        RequestBody flavorBody = RequestBody.Companion.create("dev", MediaType.parse("multipart/form-data"));
+//        调用接口
+        DefaultRepository.getInstance().uploadFiles(bodyFiles,flavorBody)
+                .subscribe(new HttpObserver<ListResonse<String>>() {
+                    @Override
+                    public void onSucceeded(ListResonse<String> data) {
+                        saveFeed(data.getData().getData());
+                    }
+                });
+
+    }
+
+    private List<LocalMedia> getSelectedImages() {
+        //获取用户选择的图片列表
+        List<Object> data=imageAdapter.getData();
+        List<LocalMedia> datum=new ArrayList<>();
+        for(Object o:data){
+            if(o instanceof LocalMedia){
+                datum.add((LocalMedia) o);
+            }
+        }
+        return datum;
     }
 
     /**
      * 点击发布按钮后发布动态
-     * @param content
      */
-    private void saveFeed(String content) {
+    private void saveFeed(List<String> medias) {
 //        调用网络接口发布动态
         Feed feed=new Feed();
         feed.setContent(content);
+        feed.setMedia(StringUtils.join(medias,","));
         DefaultRepository.getInstance().createFeed(feed).subscribe(new HttpObserver<DetailResponse<BaseId>>() {
             @Override
             public void onSucceeded(DetailResponse<BaseId> data) {

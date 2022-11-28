@@ -113,7 +113,7 @@ public class DefaultRepository {
     /**
      * 上传多张图片
      */
-    public Observable<ListResonse<BaseId>> uploadFiles(List<MultipartBody.Part> file,RequestBody flavor){
+    public Observable<ListResonse<String>> uploadFiles(List<MultipartBody.Part> file,RequestBody flavor){
         return service.uploadFiles(file,flavor)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());

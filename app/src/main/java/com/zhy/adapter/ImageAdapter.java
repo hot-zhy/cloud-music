@@ -23,7 +23,8 @@ public class ImageAdapter extends BaseQuickAdapter<Object, BaseViewHolder> {
 
     @Override
     protected void convert(@NonNull BaseViewHolder holder, Object o) {
-
+//        ImageAdapter imageAdapter = new ImageAdapter(R.layout.item_image);
+//        listView.setAdapter(imageAdapter);
         ImageView iconView = holder.getView(R.id.icon);
         holder.setGone(R.id.close,true);
         if(o instanceof String){
