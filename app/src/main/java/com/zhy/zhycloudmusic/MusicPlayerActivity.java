@@ -3,6 +3,8 @@ package com.zhy.zhycloudmusic;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.view.View;
@@ -182,7 +184,7 @@ public class MusicPlayerActivity extends BaseTitleActivity<ActivityMusicPlayerBi
             requestBuilder.load(ResourceUtil.resourceUri(data.getIcon()));
         }
         //实现高斯模糊
-        RequestOptions requestOptions = RequestOptions.bitmapTransform(new BlurTransformation(25,3));
+        RequestOptions requestOptions = RequestOptions.bitmapTransform(new BlurTransformation(50,3));
         //加载图片
         requestBuilder.apply(requestOptions)
                         .into(new CustomTarget<Drawable>() {

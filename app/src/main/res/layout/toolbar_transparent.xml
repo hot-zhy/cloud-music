@@ -9,6 +9,9 @@
     android:elevation="0dp">
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
+        app:titleTextColor="#93c057"
+        app:subtitleTextColor="#93c057"
+        app:navigationIcon="@drawable/fanhui"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         app:popupTheme="@style/SuperTheme.PopupOverlay.Light"/>

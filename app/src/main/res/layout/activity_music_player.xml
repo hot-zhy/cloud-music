@@ -42,7 +42,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="00:00"
-                android:textColor="@color/white"
+                android:textColor="#93c057"
                 android:textSize="@dimen/text_small" />
 
             <!--进度条-->
@@ -58,7 +58,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="00:00"
-                android:textColor="@color/white"
+                android:textColor="#93c057"
                 android:textSize="@dimen/text_small" />
         </LinearLayout>
 
