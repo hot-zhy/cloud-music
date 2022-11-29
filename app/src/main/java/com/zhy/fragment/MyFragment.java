@@ -3,11 +3,19 @@ package com.zhy.fragment;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.media.MediaParser;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.CompoundButton;
 
+import androidx.appcompat.app.AppCompatDelegate;
+import androidx.viewbinding.ViewBinding;
+
+import com.flyco.tablayout.CommonTabLayout;
 import com.zhy.AppContext;
 import com.zhy.Repository.DefaultRepository;
 import com.zhy.api.HttpObserver;
@@ -17,8 +25,10 @@ import com.zhy.util.Constant;
 import com.zhy.util.ImageUtil;
 import com.zhy.zhycloudmusic.BaseViewModeActivity;
 import com.zhy.zhycloudmusic.LoginActivity;
+import com.zhy.zhycloudmusic.MainActivity;
 import com.zhy.zhycloudmusic.R;
 import com.zhy.zhycloudmusic.UserDetailActivity;
+import com.zhy.zhycloudmusic.databinding.ActivityMainBinding;
 import com.zhy.zhycloudmusic.databinding.FragmentDiscoverBinding;
 import com.zhy.zhycloudmusic.databinding.FragmentMyBinding;
 
@@ -71,6 +81,24 @@ public class MyFragment extends BaseViewModelFragment<FragmentMyBinding> {
             @Override
             public void onClick(View view) {
                 showLogoutDialog();
+            }
+        });
+        /**
+         * toggle点击
+         */
+        binding.switcher.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    //开启
+//                    Log.d("toggle","开启");
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+
+                }else{
+                    //关闭
+//                    Log.d("toggle","关闭");
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                }
             }
         });
 

@@ -2,6 +2,8 @@ package com.zhy;
 
 import android.app.Activity;
 import android.app.Application;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -26,6 +28,8 @@ public class AppContext extends Application implements Application.ActivityLifec
     @Override
     public void onCreate() {
         super.onCreate();
+
+
         instance=this;
 
         //emoji初始化
@@ -36,6 +40,25 @@ public class AppContext extends Application implements Application.ActivityLifec
         myActivityManager = MyActivityManager.getInstance();
         //注册界面声明周期监听器
         registerActivityLifecycleCallbacks(this);
+    }
+
+    /**
+     * 过滤蓝光
+     * @param i
+     * @return
+     */
+    private int calculateFilterColor(int i) {
+        int realFilter=i;
+        if(realFilter<10){
+            realFilter=10;
+        }else if(realFilter>80){
+            realFilter=80;
+        }
+        int a=(int)(realFilter / 80f * 180);
+        int r=(int)(200 - realFilter / 80f * 190);
+        int g=(int)(180 - realFilter / 80f * 170);
+        int b=(int)(60 - realFilter / 80f * 60);
+        return Color.argb(a,r,g,b);
     }
 
     public static AppContext getInstance() {

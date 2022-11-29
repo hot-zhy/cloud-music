@@ -8,16 +8,16 @@
     <style name="SuperTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Dark"/>
     <!--    界面样式-->
     <style name="SuperUI.NoActionBar" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-<!--        主色调-->
+        <!--        主色调-->
         <item name="colorPrimary">@color/primary</item>
         <item name="colorPrimaryVariant">@color/primary</item>
         <item name="colorOnPrimary">@color/white</item>
-<!--        次色调-->
+        <!--        次色调-->
         <item name="colorSecondary">@color/primary</item>
         <item name="colorSecondaryVariant">@color/white</item>
         <item name="colorOnSecondary">@color/white</item>
-<!--        状态栏的颜色-->
-        <item name="android:statusBarColor" tools:ignore="NewApi">@color/primary</item>
+        <!--        状态栏的颜色-->
+        <item name="android:statusBarColor" tools:ignore="NewApi">@color/black</item>
         <item name="android:windowAnimationStyle">@android:style/Animation.Toast</item>
     </style>
 
@@ -25,7 +25,7 @@
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">@dimen/radius_rounded</item>
     </style>
-<!--    //设置容器-->
+    <!--    //设置容器-->
     <style name="SuperSettingContainer">
         <item name="android:layout_marginTop">@dimen/d0_5</item>
         <item name="android:gravity">center_vertical</item>
@@ -49,8 +49,8 @@
         <item name="android:textSize">@dimen/super_text_small</item>
     </style>
 
-<!--通用输入框-->
-<!--    多行输入框，只有底部有边框-->
+    <!--通用输入框-->
+    <!--    多行输入框，只有底部有边框-->
     <style name="EditText">
         <item name="android:drawablePadding">@dimen/padding_meddle</item>
         <item name="android:paddingStart">@dimen/padding_meddle</item>
@@ -64,7 +64,7 @@
         <item name="android:background">@color/white</item>
     </style>
 
-<!--    单行输入框-->
+    <!--    单行输入框-->
     <style name="EditText.SingleLine">
         <item name="android:maxLines">1</item>
         <item name="android:layout_height">@dimen/d50</item>
@@ -73,7 +73,7 @@
         <item name="android:layout_marginTop">@dimen/padding_meddle</item>
     </style>
 
-<!--    有边框的单行输入框-->
+    <!--    有边框的单行输入框-->
     <style name="EditText.SingleLine.Border">
         <item name="android:layout_marginTop">@dimen/padding_large</item>
         <item name="android:background">@drawable/selector_edit_text</item>
