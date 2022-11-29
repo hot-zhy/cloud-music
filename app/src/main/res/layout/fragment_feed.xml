@@ -29,6 +29,7 @@
     </com.scwang.smart.refresh.layout.SmartRefreshLayout>
 <!--    浮动按钮-->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:visibility="gone"
         android:id="@+id/primary"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.cardview.widget.CardView
+        android:layout_width="@dimen/d200"
+        android:layout_height="@dimen/d200"
+        android:id="@+id/card_view"
+        android:layout_gravity="center"
+        app:cardCornerRadius="4dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/dark_mode"
+            android:id="@+id/info_text">
+
+        </TextView>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

@@ -24,6 +24,7 @@ import com.zhy.zhycloudmusic.R;
 import com.zhy.zhycloudmusic.databinding.FragmentDiscoverBinding;
 import com.zhy.zhycloudmusic.databinding.FragmentFeedBinding;
 
+import org.apache.commons.lang3.StringUtils;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
@@ -37,6 +38,7 @@ public class FeedFragment extends BaseViewModelFragment<FragmentFeedBinding> {
     private FeedAdapter adapter;
     private boolean isRefresh;
     private Meta pageMeta;
+    private String userId;
 
     @Override
     protected boolean isRegisterEventBus() {
@@ -56,6 +58,14 @@ public class FeedFragment extends BaseViewModelFragment<FragmentFeedBinding> {
         adapter = new FeedAdapter(R.layout.item_feed);
         binding.list.setAdapter(adapter);
         //请求数据，调用接口
+        userId=getArguments().getString(Constant.ID);
+
+        if(sp.getUserId().equals(userId)){
+            /**
+             * 显示发布按钮
+             */
+            binding.primary.setVisibility(View.VISIBLE);
+        }
         loadData();
     }
 
@@ -95,6 +105,9 @@ public class FeedFragment extends BaseViewModelFragment<FragmentFeedBinding> {
         HashMap<String,String> param = new HashMap<>();
         //添加分页参数
         param.put(Constant.PAGE,String.valueOf(Meta.nextPage(pageMeta)));
+        if(StringUtils.isNotBlank(userId)){
+            param.put(Constant.USER_ID,userId);
+        }
         DefaultRepository.getInstance()
                 .feeds(param)
                 .subscribe(new HttpObserver<ListResonse<Feed>>() {
@@ -146,11 +159,23 @@ public class FeedFragment extends BaseViewModelFragment<FragmentFeedBinding> {
 
 
     public static FeedFragment newInstance() {
+        return newInstance(null);
+    }
+
+    /**
+     * 用户详情部分采用的构造方法
+     * @param userId
+     * @return
+     */
+    public static FeedFragment newInstance(String userId) {
 
         Bundle args = new Bundle();
+
+        args.putString(Constant.ID,userId);
 
         FeedFragment fragment = new FeedFragment();
         fragment.setArguments(args);
         return fragment;
     }
+
 }
