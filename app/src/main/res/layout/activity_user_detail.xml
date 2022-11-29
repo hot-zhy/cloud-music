@@ -1,9 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black183"
     tools:context=".UserDetailActivity">
+<!--    这个AppBarLayout经常用来实现特殊的ToolBar效果，例如折叠效果，悬浮效果-->
+<!--    滑动浏览时被折叠-->
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black183"
+        android:theme="@style/SuperTheme.AppBarOverlay.Dark"
+        android:elevation="0dp">
+<!--        用户信息-->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/primary"
+                app:popupTheme="@style/SuperTheme.PopupOverlay"/>
+<!--            真实内容-->
+            <LinearLayout
+                android:layout_marginTop="@dimen/d20"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+<!--                头像-->
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/icon"
+                    android:layout_width="@dimen/d80"
+                    android:layout_height="@dimen/d80"
+                    android:scaleType="centerCrop"
+                    app:shapeAppearanceOverlay="@style/RoundCornerImageStyle"
+                    app:srcCompat="@drawable/default_avatar"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/nickname"
+                    android:layout_marginTop="@dimen/d10"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:text="点击登录"/>
+            </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+<!--        指示器-->
+<!--        注意minHeight控制的是悬浮时候的高度-->
+        <com.google.android.material.tabs.TabLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/d40"
+            android:layout_marginTop="@dimen/d10"
+            android:background="@color/black183"
+            android:minHeight="@dimen/d40"
+            app:tabIndicatorColor="@color/primary"
+            app:tabIndicatorFullWidth="false"
+            app:tabIndicatorAnimationDuration="@integer/material_motion_duration_long_1"
+            app:tabIndicatorHeight="@dimen/d2"
+            app:tabSelectedTextColor="@color/primary"
+            app:tabTextColor="?attr/colorOnSurface"
+
+            >
+        </com.google.android.material.tabs.TabLayout>
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+    <!--            内容布局-->
+    <!--            使用ViewPager-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+        >
+<!--        引入分割线-->
+        <include layout="@layout/divider_small_vertical"/>
+<!--        左右滚动的ViewPager-->
+        <androidx.viewpager.widget.ViewPager
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/list">
+
+        </androidx.viewpager.widget.ViewPager>
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -34,6 +34,7 @@
             android:label="注册" />
         <activity
             android:name=".UserDetailActivity"
+            android:label="用户详情"
             android:exported="false" />
         <activity
             android:name=".LoginActivity"
