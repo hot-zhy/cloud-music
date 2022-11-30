@@ -6,6 +6,7 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+import com.zhy.config.Config;
 import com.zhy.util.ResourceUtil.ResourceUtil;
 import com.zhy.zhycloudmusic.R;
 
@@ -22,12 +23,22 @@ public class ImageUtil {
             view.setImageResource(R.drawable.default_avatar);
             return;
         }
+
+        /**
+         * 上传到自己的服务器，拼接自己
+         */
+        if(data.startsWith("r/")){
+            data=String.format("%s%s", Config.ENDPOINT,data);
+        }else{
+            //        将图片相对路径转化为绝对路径
+            data= ResourceUtil.resourceUri(data);
+        }
+
+
         if(data.contains("/files/Music")){
             showLocalImage(view,data);
             return;
         }
-//        将图片相对路径转化为绝对路径
-        data= ResourceUtil.resourceUri(data);
 //        显示绝对路径
         showFull(view,data);
     }

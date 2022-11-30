@@ -78,7 +78,7 @@
     <string name="person_info">个人信息</string>
     <string name="nickname_value">昵称：%1$s</string>
     <string name="gender_value">性别：%1$s</string>
-    <string name="birthday_value">生日：%1$s</string>
+    <string name="birthday_value">生日：2002-4-11</string>
     <string name="area_value">地区：%1$s</string>
     <string name="area_value2">%1$s-%2$s-%3$s</string>
     <string name="more_info">更多信息</string>
@@ -101,4 +101,6 @@
     </string>
     <string name="share">添加</string>
     <string name="user_detail">用户详情</string>
+    <string name="vae">大家好我是Vae，这是我即将发表的首张独创专辑《自定义》里面的一首推荐曲目，词曲编曲都是我自己，希望这首歌曲能在这个寒冷的冬天带给大家一种~温暖的感觉~</string>
+    <string name="detail_value">大家好我是Vae，这是我即将发表的收藏独创专辑《自定义》里面的一首推荐曲目，词曲编曲都是我自己，希望这首歌曲，能在这个寒冷的冬天，带给大家一种温暖的感觉~</string>
 </resources>

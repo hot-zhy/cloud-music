@@ -39,7 +39,7 @@
         app:tl_iconWidth="@dimen/d20"
         app:tl_indicator_color="?attr/colorPrimary"
         app:tl_indicator_height="0dp"
-        app:tl_textSelectColor="?attr/colorPrimary"
+        app:tl_textSelectColor="#638B4C"
         app:tl_textUnselectColor="?attr/colorOnSurface"
         app:tl_textsize="@dimen/s12"
         app:tl_underline_height="0dp" />

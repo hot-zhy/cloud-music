@@ -21,6 +21,34 @@ public class User extends Common{
      * @return
      */
     private String password;
+    private int gender;
+    private String birthday;
+
+    public int getGender() {
+        return gender;
+    }
+
+    public void setGender(int gender) {
+        this.gender = gender;
+    }
+
+    public String getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(String birthday) {
+        this.birthday = birthday;
+    }
+
+    public String getDetail() {
+        return detail;
+    }
+
+    public void setDetail(String detail) {
+        this.detail = detail;
+    }
+
+    private String detail;
 
     public String getPassword() {
         return password;
@@ -52,5 +80,17 @@ public class User extends Common{
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+
+    public Object getGenderFormat() {
+        switch (gender){
+            case 10:
+                return "男";
+            case 20:
+                return "女";
+            default:
+                return "保密";
+        }
     }
 }

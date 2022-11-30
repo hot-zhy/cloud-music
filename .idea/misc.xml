@@ -11,6 +11,7 @@
         <entry key="..\:/CloudMusic/app/src/main/res/drawable/music_play.xml" value="0.1415" />
         <entry key="..\:/CloudMusic/app/src/main/res/drawable/music_repeat_list.xml" value="0.1415" />
         <entry key="..\:/CloudMusic/app/src/main/res/drawable/selector_edit_text.xml" value="0.1415" />
+        <entry key="..\:/CloudMusic/app/src/main/res/drawable/shape_card_border.xml" value="0.1495" />
         <entry key="..\:/CloudMusic/app/src/main/res/drawable/shape_edit_text_border.xml" value="0.1415" />
         <entry key="..\:/CloudMusic/app/src/main/res/drawable/shape_edit_text_border_selected.xml" value="0.1415" />
         <entry key="..\:/CloudMusic/app/src/main/res/layout/activity_login.xml" value="0.264" />
@@ -29,11 +30,13 @@
         <entry key="..\:/CloudMusic/app/src/main/res/layout/fragment_discover.xml" value="0.20471014492753623" />
         <entry key="..\:/CloudMusic/app/src/main/res/layout/fragment_feed.xml" value="0.4" />
         <entry key="..\:/CloudMusic/app/src/main/res/layout/fragment_my.xml" value="0.264" />
-        <entry key="..\:/CloudMusic/app/src/main/res/layout/fragment_user_detail_about.xml" value="0.22282608695652173" />
+        <entry key="..\:/CloudMusic/app/src/main/res/layout/fragment_user_detail_about.xml" value="0.264" />
         <entry key="..\:/CloudMusic/app/src/main/res/layout/item_feed.xml" value="0.264" />
         <entry key="..\:/CloudMusic/app/src/main/res/layout/item_image.xml" value="0.20108695652173914" />
         <entry key="..\:/CloudMusic/app/src/main/res/layout/item_play_list.xml" value="0.20108695652173914" />
         <entry key="..\:/CloudMusic/app/src/main/res/layout/item_song.xml" value="0.264" />
+        <entry key="..\:/CloudMusic/app/src/main/res/layout/list_item.xml" value="0.22282608695652173" />
+        <entry key="..\:/CloudMusic/app/src/main/res/layout/shape_card_border.xml" value="0.22282608695652173" />
         <entry key="..\:/CloudMusic/app/src/main/res/layout/toolbar.xml" value="0.17760416666666667" />
         <entry key="..\:/CloudMusic/app/src/main/res/layout/toolbar_transparent.xml" value="0.22604166666666667" />
         <entry key="..\:/CloudMusic/app/src/main/res/layout/view_record_page.xml" value="0.20108695652173914" />

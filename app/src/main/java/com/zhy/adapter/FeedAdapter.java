@@ -29,7 +29,7 @@ public class FeedAdapter extends BaseQuickAdapter<Feed, BaseViewHolder> {
 
     @Override
     protected void convert(@NonNull BaseViewHolder holder, Feed feed) {
-        ImageUtil.showAvatar(holder.getView(R.id.icon),feed.getUser().getIcon());
+//        ImageUtil.showAvatar(holder.getView(R.id.icon),feed.getUser().getIcon());
         holder.setText(R.id.nickname,feed.getUser().getNickname());
         holder.setText(R.id.content,feed.getContent());
         holder.setText(R.id.date, SuperDateUtil.commonFormat(feed.getCreateAt()));
