@@ -168,6 +168,8 @@ public class MusicPlayerActivity extends BaseTitleActivity<ActivityMusicPlayerBi
         Song data= getMusicListManager().getData();
         //显示当前歌曲标题
         setTitle(data.getTitle());
+        binding.title.setText(data.getTitle());
+        binding.subtitle.setText(data.getSinger().getNickname());
         /**
          * 显示歌手信息
          */

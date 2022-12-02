@@ -54,6 +54,6 @@ public class RecordPageView extends LinearLayout {
             recordRotation=0;
         }
         recordRotation+= Constant.ROTATION_PER;
-        binding.content.setRotation(recordRotation);
+        binding.icon.setRotation(recordRotation);
     }
 }

@@ -52,10 +52,10 @@ public class MyFragment extends BaseViewModelFragment<FragmentMyBinding> {
                 startActivity(LoginActivity.class);
             }
         };
-        /**
-         * 点击图标
-         */
-        binding.icon.setOnClickListener(userClick);
+//        /**
+//         * 点击图标
+//         */
+//        binding.icon.setOnClickListener(userClick);
         /**
          * 点击昵称
          */
@@ -67,10 +67,6 @@ public class MyFragment extends BaseViewModelFragment<FragmentMyBinding> {
             Uri uri=Uri.parse("https://hot-zhy.github.io/");
             intent.setData(uri);
             startActivity(intent);
-        });
-        //设置点击
-        binding.setting.setOnClickListener(v -> {
-
         });
         //客服点击
         binding.service.setOnClickListener(v -> {
@@ -159,12 +155,12 @@ public class MyFragment extends BaseViewModelFragment<FragmentMyBinding> {
     }
 
     private void showData(User data) {
-        ImageUtil.showAvatar(binding.icon,data.getIcon());
+//        ImageUtil.showAvatar(binding.icon,data.getIcon());
         binding.nickname.setText(data.getNickname());
     }
 
     private void showNotLogin() {
-        binding.icon.setImageResource(R.drawable.default_avatar);
+//        binding.icon.setImageResource(R.drawable.default_avatar);
         binding.nickname.setText(R.string.login_or_register);
         binding.primary.setVisibility(View.GONE);
     }

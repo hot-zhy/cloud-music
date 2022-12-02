@@ -23,18 +23,61 @@
         <!--toolbar-->
         <include layout="@layout/toolbar_transparent" />
 <!--        添加黑椒唱片控件-->
+        <!--进度容器-->
         <com.zhy.view.RecordPageView
             android:id="@+id/record"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"/>
-        <!--进度容器-->
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:layout_marginBottom="@dimen/d20"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/d20"
+            android:layout_marginTop="@dimen/d10"
+            android:layout_marginRight="@dimen/d20"
+            android:orientation="vertical">
+            <TextView
+                android:textStyle="bold"
+                android:textSize="27sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/title"
+                android:text="讲不出再见"/>
+            <TextView
+                android:layout_marginTop="@dimen/d10"
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/subtitle"
+                android:text="谭咏麟"/>
+        </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="@dimen/d10"
-            android:layout_marginRight="25dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal">
+
+            <!--进度条-->
+            <SeekBar
+                android:id="@+id/progress"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="@dimen/d10"
+            android:gravity="center"
+            android:layout_marginRight="20dp"
             android:orientation="horizontal">
             <!--开始位置-->
             <TextView
@@ -44,14 +87,7 @@
                 android:text="00:00"
                 android:textColor="#93c057"
                 android:textSize="@dimen/text_small" />
-
-            <!--进度条-->
-            <SeekBar
-                android:id="@+id/progress"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-
+            <include layout="@layout/fill"/>
             <!--结束位置-->
             <TextView
                 android:id="@+id/end"
@@ -60,7 +96,9 @@
                 android:text="00:00"
                 android:textColor="#93c057"
                 android:textSize="@dimen/text_small" />
+
         </LinearLayout>
+
 
         <!--控制容器-->
         <LinearLayout

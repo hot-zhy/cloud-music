@@ -11,13 +11,14 @@
         <entry key="..\:/CloudMusic/app/src/main/res/drawable/music_pause.xml" value="0.1415" />
         <entry key="..\:/CloudMusic/app/src/main/res/drawable/music_play.xml" value="0.1415" />
         <entry key="..\:/CloudMusic/app/src/main/res/drawable/music_repeat_list.xml" value="0.1415" />
+        <entry key="..\:/CloudMusic/app/src/main/res/drawable/play.xml" value="0.1375" />
         <entry key="..\:/CloudMusic/app/src/main/res/drawable/selector_edit_text.xml" value="0.1415" />
         <entry key="..\:/CloudMusic/app/src/main/res/drawable/shape_card_border.xml" value="0.1495" />
         <entry key="..\:/CloudMusic/app/src/main/res/drawable/shape_edit_text_border.xml" value="0.1415" />
         <entry key="..\:/CloudMusic/app/src/main/res/drawable/shape_edit_text_border_selected.xml" value="0.1415" />
         <entry key="..\:/CloudMusic/app/src/main/res/layout/activity_login.xml" value="0.264" />
         <entry key="..\:/CloudMusic/app/src/main/res/layout/activity_main.xml" value="0.2" />
-        <entry key="..\:/CloudMusic/app/src/main/res/layout/activity_music_player.xml" value="0.19202898550724637" />
+        <entry key="..\:/CloudMusic/app/src/main/res/layout/activity_music_player.xml" value="0.264" />
         <entry key="..\:/CloudMusic/app/src/main/res/layout/activity_publish_feed.xml" value="0.20108695652173914" />
         <entry key="..\:/CloudMusic/app/src/main/res/layout/activity_register.xml" value="0.16614583333333333" />
         <entry key="..\:/CloudMusic/app/src/main/res/layout/activity_simple_player.xml" value="0.2" />

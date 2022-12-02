@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name"></string>
+    <string name="app_name">VaeMusic</string>
     <string name="copyright">Copyright © %d.All Rights Reserved.</string>
     <string name="permission_hint">不同意获取权限就无法使用~</string>
     <string name="allow">授权</string>
@@ -95,4 +95,7 @@
     <string name="user_detail">用户详情</string>
     <string name="vae">大家好我是Vae，这是我即将发表的首张独创专辑《自定义》里面的一首推荐曲目，词曲编曲都是我自己，希望这首歌曲能在这个寒冷的冬天带给大家一种~温暖的感觉~</string>
     <string name="detail_value">大家好我是Vae，这是我即将发表的收藏独创专辑《自定义》里面的一首推荐曲目，词曲编曲都是我自己，希望这首歌曲，能在这个寒冷的冬天，带给大家一种温暖的感觉~</string>
+    <string name="vip">海量特权为你解锁~</string>
+    <string name="geluomi">如果你有时不那么开心，我愿意将格洛米借给你</string>
+    <string name="youhebuke">有何不可</string>
 </resources>

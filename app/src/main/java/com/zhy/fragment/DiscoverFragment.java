@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -60,28 +61,8 @@ public class DiscoverFragment extends BaseViewModelFragment<FragmentDiscoverBind
         binding.list.setAdapter(adapter);
 //        获取数据
         loadData();
-//        if(Config.DEBUG){
-//            //测试数据
-//            LiteORMUtil orm = LiteORMUtil.getInstance(getHostActivity());
-//            //创建对象
-//            SearchHistory searchHistory = new SearchHistory();
-//            //赋值
-//            searchHistory.setContent("我是赵晗瑜");
-//            searchHistory.setCreatedAt(System.currentTimeMillis());
-//            orm.createOrUpdate(searchHistory);
-//            //赋值
-//            searchHistory.setContent("人生苦短");
-//            searchHistory.setCreatedAt(System.currentTimeMillis());
-//            orm.createOrUpdate(searchHistory);
-//            //查询所有
-//            List<SearchHistory> results = orm.querySearchHistory();
-//            Log.d("TAG","initDatum: "+results.size());
-//            //删除
-//            orm.deleteSearchHistory(searchHistory);
-//            //查询所有
-//            results = orm.querySearchHistory();
-//            Log.d("TAG","initDatum: "+results.size());
-//        }
+
+
 
     }
 

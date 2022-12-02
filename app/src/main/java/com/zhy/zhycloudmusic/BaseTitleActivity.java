@@ -18,6 +18,7 @@ public class BaseTitleActivity<VB extends ViewBinding> extends BaseViewModeActiv
         toolbar = findViewById(R.id.toolbar);
 //        初始化toolbar
         setSupportActionBar(toolbar);
+        toolbar.setTitle("");
 //        showBackMenu();
 //        是否显示返回按钮
         if(isShowBackMenu()){

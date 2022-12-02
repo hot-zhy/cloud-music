@@ -34,9 +34,9 @@
     <com.flyco.tablayout.CommonTabLayout
         android:id="@+id/indicator"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/d55"
-        app:tl_iconHeight="@dimen/d20"
-        app:tl_iconWidth="@dimen/d20"
+        android:layout_height="@dimen/d65"
+        app:tl_iconHeight="@dimen/d30"
+        app:tl_iconWidth="@dimen/d30"
         app:tl_indicator_color="?attr/colorPrimary"
         app:tl_indicator_height="0dp"
         app:tl_textSelectColor="#638B4C"
