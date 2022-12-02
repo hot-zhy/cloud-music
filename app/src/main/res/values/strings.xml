@@ -1,14 +1,14 @@
 <resources>
-    <string name="app_name">山高流水</string>
+    <string name="app_name"></string>
     <string name="copyright">Copyright © %d.All Rights Reserved.</string>
     <string name="permission_hint">不同意获取权限就无法使用~</string>
     <string name="allow">授权</string>
     <string name="deny">拒绝</string>
     <!-- 发现界面 -->
-    <string name="discovery">发现</string>
+    <string name="discovery">聆听</string>
     <string name="me">我的</string>
-    <string name="feed">动态</string>
-    <string name="publish_feed">发动态</string>
+    <string name="feed">圈子</string>
+    <string name="publish_feed">发圈子</string>
     <string name="search">搜索</string>
     <string name="add">添加</string>
     <!-- 评论 -->
@@ -86,14 +86,6 @@
     <string name="description_value">个人描述：%1$s</string>
     <string name="play">播放</string>
     <string name="pause">暂停</string>
-    <!-- 设置 -->
-    <string name="network">网络</string>
-    <string name="play_mobile_network">使用移动网络播放</string>
-    <string name="play_mobile_network_summary_on">已打开移动网络播放，请注意流量消耗，以免产生额外费用</string>
-    <string name="play_mobile_network_summary_off">已关闭移动网络播放</string>
-    <string name="play_mobile_network_alert">当前处于移动网络，是否自动播放</string>
-    <string name="download_mobile_network">使用移动网络下载</string>
-    <string name="play_mobile_network_summary">这是更多描述</string>
     <string name="user_agreement">
         <Data>
         <![CDATA[ 登录即表示你同意《用户协议》和《隐私政策》 ]]>

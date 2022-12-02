@@ -25,7 +25,7 @@
     <color name="super_click_background">#ffd5d5d5</color>
 
     <!--文本颜色-->
-    <color name="super_text">#ffffff</color>
+    <color name="super_text">#d5d5d5</color>
 
     <!--灰色，例如：设置item右侧图标，右侧更多文本颜色-->
     <color name="super_light_grey">#ff888888</color>

@@ -10,7 +10,19 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        app:popupTheme="@style/SuperTheme.PopupOverlay"/>
+        app:collapseIcon="@drawable/logo"
+        app:popupTheme="@style/SuperTheme.PopupOverlay">
+        <ImageView
+            android:layout_width="@dimen/d120"
+            android:layout_height="@dimen/d120"
+            android:layout_gravity="left|top"
+            android:src="@drawable/logo_fo"
+            >
+
+        </ImageView>
+
+
+    </androidx.appcompat.widget.Toolbar>
 
 
 </com.google.android.material.appbar.AppBarLayout>
