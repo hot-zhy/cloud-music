@@ -168,7 +168,7 @@
         <com.google.android.material.button.MaterialButton
             android:visibility="gone"
             android:id="@+id/primary"
-            android:layout_marginTop="@dimen/d40"
+            android:layout_marginTop="@dimen/d20"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/d20"
