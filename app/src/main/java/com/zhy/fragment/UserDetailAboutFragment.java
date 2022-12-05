@@ -7,6 +7,7 @@ import com.zhy.Repository.DefaultRepository;
 import com.zhy.api.HttpObserver;
 import com.zhy.model.User;
 import com.zhy.model.response.DetailResponse;
+import com.zhy.model.response.ListResonse;
 import com.zhy.util.Constant;
 import com.zhy.util.ImageUtil;
 import com.zhy.zhycloudmusic.R;
@@ -45,7 +46,7 @@ public class UserDetailAboutFragment extends BaseViewModelFragment<FragmentUserD
 
     @SuppressLint("StringFormatInvalid")
     private void showData(User data) {
-        binding.nickname.setText(getResources().getString(R.string.nickname_value,data.getNickname()));
+        binding.nickname.setText(getResources().getString(R.string.nickname_value,data.getUsername()));
         binding.gender.setText(getResources().getString(R.string.gender_value,data.getGenderFormat()));
         binding.birthday.setText(getResources().getString(R.string.birthday_value,data.getBirthday()));
         binding.detail.setText(getResources().getString(R.string.detail_value,data.getDetail()));

@@ -9,6 +9,7 @@ import com.zhy.adapter.UserDetailAdapter;
 import com.zhy.api.HttpObserver;
 import com.zhy.model.User;
 import com.zhy.model.response.DetailResponse;
+import com.zhy.model.response.ListResonse;
 import com.zhy.util.Constant;
 import com.zhy.util.ImageUtil;
 import com.zhy.zhycloudmusic.databinding.ActivityUserDetailBinding;
@@ -54,7 +55,7 @@ public class UserDetailActivity extends BaseTitleActivity<ActivityUserDetailBind
     private void showData(User data) {
         this.data=data;
         ImageUtil.showAvatar(binding.icon,data.getIcon());
-        binding.nickname.setText(data.getNickname());
+        binding.nickname.setText(data.getUsername());
 
     }
     /**

@@ -97,12 +97,12 @@ public class RegisterActivity extends BaseLoginActivity<ActivityRegisterBinding>
     private void registerClick(User data) {
         //调用注册接口
         DefaultRepository.getInstance()
-                .register(data)
+                .register(data.getNickname(), data.getPassword(),data.getPhone())
                 .subscribe(new HttpObserver<DetailResponse<BaseId>>() {
                     @Override
                     public void onSucceeded(DetailResponse<BaseId> d) {
                         //注册成功后登录
-                        login(data);
+                        login(data.getPassword(),data.getPhone());
                     }
                 });
     }

@@ -17,6 +17,7 @@ import com.zhy.model.event.FeedChangedEvent;
 import com.zhy.model.event.LoginStatusChangedEvent;
 import com.zhy.model.response.ListResonse;
 import com.zhy.util.Constant;
+import com.zhy.util.PreferenceUtil;
 import com.zhy.zhycloudmusic.BaseViewModeActivity;
 import com.zhy.zhycloudmusic.LoginActivity;
 import com.zhy.zhycloudmusic.PublishFeedActivity;
@@ -35,6 +36,7 @@ import java.util.HashMap;
  * 动态界面
  */
 public class FeedFragment extends BaseViewModelFragment<FragmentFeedBinding> {
+    private static PreferenceUtil sp;
     private FeedAdapter adapter;
     private boolean isRefresh;
     private Meta pageMeta;

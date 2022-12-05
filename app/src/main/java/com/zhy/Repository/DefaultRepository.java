@@ -23,6 +23,7 @@ import okhttp3.MultipartBody;
 import okhttp3.OkHttpClient;
 import okhttp3.RequestBody;
 import retrofit2.Retrofit;
+import retrofit2.http.Body;
 import retrofit2.http.Part;
 
 /**
@@ -62,24 +63,24 @@ public class DefaultRepository {
                 .observeOn(AndroidSchedulers.mainThread());
     }
 
-    public Observable<DetailResponse<Session>> login(User data){
-        return service.login(data)
+    public Observable<DetailResponse<Session>> login(String password, String phone){
+        return service.login(password,phone)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
     }
     /**
      * 用户详情
      */
-    public Observable<DetailResponse<User>> userDetail(String data) {
-        return service.userDetail(data)
+    public Observable<DetailResponse<User>> userDetail(String id) {
+        return service.userDetail(id)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
     }
     /**
      * 注册
      */
-    public Observable<DetailResponse<BaseId>> register(User data) {
-        return service.register(data)
+    public Observable<DetailResponse<BaseId>> register(@Body String nickname, @Body String password, @Body String phone) {
+        return service.register(nickname,password,phone)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
     }
@@ -95,8 +96,8 @@ public class DefaultRepository {
     /**
      * 发布动态
      */
-    public Observable<DetailResponse<BaseId>> createFeed(Feed data){
-        return service.createFeed(data)
+    public Observable<DetailResponse<BaseId>> createFeed(String content,String media,String id){
+        return service.createFeed(content,media,id)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
     }
@@ -115,6 +116,14 @@ public class DefaultRepository {
      */
     public Observable<ListResonse<String>> uploadFiles(List<MultipartBody.Part> file,RequestBody flavor){
         return service.uploadFiles(file,flavor)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread());
+    }
+    /**
+     * 获取本人列表
+     */
+    public Observable<ListResonse<Feed>> feedSelf(Integer id){
+        return service.feeds(id)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
     }

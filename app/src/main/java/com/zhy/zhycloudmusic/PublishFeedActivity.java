@@ -246,10 +246,12 @@ public class PublishFeedActivity extends BaseTitleActivity<ActivityPublishFeedBi
      */
     private void saveFeed(List<String> medias) {
 //        调用网络接口发布动态
-        Feed feed=new Feed();
-        feed.setContent(content);
-        feed.setMedia(StringUtils.join(medias,","));
-        DefaultRepository.getInstance().createFeed(feed).subscribe(new HttpObserver<DetailResponse<BaseId>>() {
+//        Feed feed=new Feed();0
+//        feed.setContent(content);
+//        feed.setMedia(StringUtils.join(medias,","));
+        DefaultRepository.getInstance()
+                .createFeed(content,StringUtils.join(medias,","),sp.getUserId())
+                .subscribe(new HttpObserver<DetailResponse<BaseId>>() {
             @Override
             public void onSucceeded(DetailResponse<BaseId> data) {
                 EventBus.getDefault().post(new FeedChangedEvent());

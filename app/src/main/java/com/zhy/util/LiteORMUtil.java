@@ -76,16 +76,10 @@ public class LiteORMUtil {
     public List<Song> queryPlayList(){
         QueryBuilder<Song> queryBuilder = new QueryBuilder<>(Song.class);
         queryBuilder.appendOrderDescBy("createAt");
-        return localConverts(orm.query(queryBuilder));
+        return orm.query(queryBuilder);
 
     }
 
-    private List<Song> localConverts(ArrayList<Song> data) {
-        for(Song it:data){
-            it.localConvert();
-        }
-        return data;
-    }
 
     /**
      * 删除某一首音乐
@@ -107,15 +101,9 @@ public class LiteORMUtil {
      * @param data
      */
     public void saveAll(List<Song> data){
-        convertLocal(data);
         orm.save(data);
     }
 
-    private void convertLocal(List<Song> data) {
-        for (Song it:data){
-            it.convertLocal();
-        }
-    }
 
     /**
      * 保存一首音乐

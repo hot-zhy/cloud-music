@@ -18,7 +18,17 @@ public class Feed extends Common{
      * 用户
      * @return
      */
-    private User user;
+    private Integer userId;
+    private String nickname;
+    private String icon;
+
+    public String getNickname() {
+        return nickname;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
 
     /**
      * 媒体资源
@@ -26,12 +36,23 @@ public class Feed extends Common{
      */
     private String media;
 
-    public User getUser() {
-        return user;
+
+    public Integer getUserId() {
+        return userId;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
+
+
+    public String getIcon() {
+        return icon;
+    }
+
+    public void setIcon(String icon) {
+        this.icon = icon;
     }
 
     public String getMedia() {

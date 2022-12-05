@@ -17,24 +17,13 @@ public class Config {
     /**
      * 端点
      */
-    public static String ENDPOINT = "http://cloud-music-lite-sp.ixuea.com/";
+    public static String ENDPOINT = "http://119.91.198.46:9001/";
 
-    /**
-     * 端点
-     * 真机访问电脑
-     */
-//    public static String ENDPOINT = "http://192.168.50.159/";
-
-    /**
-     * 端点
-     * 自带模拟器访问电脑
-     */
-//    public static String ENDPOINT = "http://10.0.2.2:8080/";
 
     /**
      * 资源端点
      */
-    public static String RESOURCE_ENDPOINT = "http://course-music-dev.ixuea.com/%s";
+    public static String RESOURCE_ENDPOINT = "http://119.91.198.46:9000/%s";
     /**
      * 缓存目录大小
      */

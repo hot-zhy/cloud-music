@@ -21,6 +21,7 @@ import com.zhy.Repository.DefaultRepository;
 import com.zhy.api.HttpObserver;
 import com.zhy.model.User;
 import com.zhy.model.response.DetailResponse;
+import com.zhy.model.response.ListResonse;
 import com.zhy.util.Constant;
 import com.zhy.util.ImageUtil;
 import com.zhy.zhycloudmusic.BaseViewModeActivity;
@@ -31,6 +32,11 @@ import com.zhy.zhycloudmusic.UserDetailActivity;
 import com.zhy.zhycloudmusic.databinding.ActivityMainBinding;
 import com.zhy.zhycloudmusic.databinding.FragmentDiscoverBinding;
 import com.zhy.zhycloudmusic.databinding.FragmentMyBinding;
+
+import java.util.List;
+import java.util.Observable;
+
+import io.reactivex.rxjava3.core.Observer;
 
 /**
  * 我的界面
@@ -141,6 +147,7 @@ public class MyFragment extends BaseViewModelFragment<FragmentMyBinding> {
 
     /**
      * 加载用户信息，调用获取用户详情信息接口
+     *  .subscribe(new HttpObserver<ListResonse<Feed>>() {
      */
     private void loadUserData() {
         DefaultRepository.getInstance()
@@ -148,15 +155,13 @@ public class MyFragment extends BaseViewModelFragment<FragmentMyBinding> {
                 .subscribe(new HttpObserver<DetailResponse<User>>() {
                     @Override
                     public void onSucceeded(DetailResponse<User> data) {
-                        //获取详情信息成功,显示数据
                         showData(data.getData());
                     }
                 });
     }
 
     private void showData(User data) {
-//        ImageUtil.showAvatar(binding.icon,data.getIcon());
-        binding.nickname.setText(data.getNickname());
+        binding.nickname.setText(data.getUsername());
     }
 
     private void showNotLogin() {

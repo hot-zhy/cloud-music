@@ -17,6 +17,8 @@ import io.reactivex.rxjava3.core.Observable;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import retrofit2.http.Body;
+import retrofit2.http.Field;
+import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.Multipart;
@@ -54,26 +56,29 @@ public interface DefaultService {
      * 登录
      */
     @POST("v1/sessions")
-    Observable<DetailResponse<Session>> login(@Body User data);
+    Observable<DetailResponse<Session>> login(@Query(value="password") String password,@Query(value="phone") String phone);
     /**
      * 发布动态,访问参数是Feed类型
      */
     @POST("v1/feeds")
-    Observable<DetailResponse<BaseId>> createFeed(@Body Feed data);
+    @FormUrlEncoded
+    Observable<DetailResponse<BaseId>> createFeed(@Field(value="content")String content,@Field(value="media")String media,@Field(value="id")String id);
 
     /**
      * 用户详情
-     * @param data
+     * @param id
      * @return
      */
-    @GET("v1/users/{data}")
-    Observable<DetailResponse<User>> userDetail(@Path("data") String data);
+
+    @GET("/user/detail")
+    Observable<DetailResponse<User>> userDetail(@Query(value="id") String id);
 
     /**
      * 注册,返回的用户id
      */
     @POST("v1/users")
-    Observable<DetailResponse<BaseId>> register(@Body User data);
+    @FormUrlEncoded
+    Observable<DetailResponse<BaseId>> register(@Field("nickname") String nickname,@Field("password") String password,@Field("phone") String phone);
 
     /**
      * 上传单张文件
@@ -93,4 +98,7 @@ public interface DefaultService {
     @Multipart
     @POST("v1/r/multi")
     Observable<ListResonse<String>> uploadFiles(@Part List<MultipartBody.Part> file, @Part("flavor")RequestBody flavor);
+
+    @GET("v1/feeds/self")
+    Observable<ListResonse<Feed>> feeds(@Query("id")Integer id);
 }

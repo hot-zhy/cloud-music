@@ -14,7 +14,7 @@
         android:layout_height="@dimen/d70"
         android:scaleType="centerCrop"
         android:id="@+id/icon"
-        android:src="@drawable/placeholder"
+        android:src="@drawable/default_avatar"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:shapeAppearanceOverlay="@style/RoundCornerImageStyle"/>

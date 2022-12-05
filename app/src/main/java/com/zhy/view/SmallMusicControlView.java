@@ -92,7 +92,7 @@ public class SmallMusicControlView extends LinearLayout implements MusicPlayerLi
         if(data==null){
             return;
         }
-        ImageUtil.show(binding.icon,data.getIcon());
+        ImageUtil.show(binding.icon,data.getPic());
     }
 
     public void onPause() {

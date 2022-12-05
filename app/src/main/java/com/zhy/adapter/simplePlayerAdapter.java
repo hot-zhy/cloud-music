@@ -23,7 +23,7 @@ public class simplePlayerAdapter extends BaseQuickAdapter<Song, BaseViewHolder> 
     @Override
     protected void convert(@NonNull BaseViewHolder holder, Song song) {
         //展示列表中的标题
-        holder.setText(android.R.id.text1,song.getTitle());
+        holder.setText(android.R.id.text1,song.getName());
         if(selectedIndex==holder.getAdapterPosition()){
             holder.setTextColorRes(android.R.id.text1, R.color.primary);
         }else{

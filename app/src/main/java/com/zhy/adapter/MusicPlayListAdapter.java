@@ -24,7 +24,7 @@ public class MusicPlayListAdapter extends BaseQuickAdapter<Song, BaseViewHolder>
     @Override
     protected void convert(@NonNull BaseViewHolder holder, Song data) {
         //标题显示数据
-        String title=String.format("%s - %s",data.getTitle(),data.getSinger().getNickname());
+        String title=String.format("%s - %s",data.getName(),data.getSinger());
         //设置数据
         holder.setText(R.id.title,title);
         //处理选中

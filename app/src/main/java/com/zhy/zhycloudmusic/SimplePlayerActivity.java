@@ -157,7 +157,7 @@ public class SimplePlayerActivity extends BaseTitleActivity<ActivitySimplePlayer
         //获取当前播放的音乐以显示标题
         Song data= getMusicListManager().getData();
         //显示当前歌曲标题
-        setTitle(data.getTitle());
+        setTitle(data.getName());
     }
 
     /**

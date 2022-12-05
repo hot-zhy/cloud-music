@@ -43,11 +43,11 @@ public class NetworkModule {
                 if(sp.isLogin()){
                     //如果登录了，获取token
                     //如果没有登录，服务器端就获取不到这个请求头，网络请求会中断
-                    String session=sp.getSession();
-                    //为网络请求添加请求头
-                    request=request.newBuilder()
-                            .addHeader("Authorization",session)
-                            .build();
+//                    String session=sp.getSession();
+//                    //为网络请求添加请求头
+//                    request=request.newBuilder()
+//                            .addHeader("Cookie",session)
+//                            .build();
                 }
                 //继续执行网络请求
                 return chain.proceed(request);

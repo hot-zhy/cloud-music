@@ -16,14 +16,10 @@ import com.zhy.util.PreferenceUtil;
  * @param <VB>
  */
 public class BaseLoginActivity<VB extends ViewBinding> extends BaseTitleActivity<VB>{
-    /**
-     * 登录
-     * @param data
-     */
-    protected void login(User data){
+    protected void login(String password,String phone){
         //调用登录接口
         DefaultRepository.getInstance()
-                .login(data)
+                .login(password,phone)
                 .subscribe(new HttpObserver<DetailResponse<Session>>() {
                     /**
                      * 登录成功
@@ -43,7 +39,7 @@ public class BaseLoginActivity<VB extends ViewBinding> extends BaseTitleActivity
     private void onLogin(Session data) {
         //保存userId到偏好配置
         sp.setUserId(data.getId());
-        sp.setSession(data.getSession());
+        sp.setSession(data.getToken());
 //        将登录事件代理到AppContext中
 //        其他的功能可能也需要用户登录
         AppContext.getInstance().onLogin(data);

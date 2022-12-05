@@ -29,8 +29,8 @@ public class FeedAdapter extends BaseQuickAdapter<Feed, BaseViewHolder> {
 
     @Override
     protected void convert(@NonNull BaseViewHolder holder, Feed feed) {
-//        ImageUtil.showAvatar(holder.getView(R.id.icon),feed.getUser().getIcon());
-        holder.setText(R.id.nickname,feed.getUser().getNickname());
+//        ImageUtil.showAvatar(holder.getView(R.id.icon),feed.getIcon());
+        holder.setText(R.id.nickname,feed.getNickname());
         holder.setText(R.id.content,feed.getContent());
         holder.setText(R.id.date, SuperDateUtil.commonFormat(feed.getCreateAt()));
 
@@ -73,7 +73,7 @@ public class FeedAdapter extends BaseQuickAdapter<Feed, BaseViewHolder> {
         }
 
 
-        if(feed.getUser().getId().equals(PreferenceUtil.getInstance(getContext()).getUserId())){
+        if(feed.getId().equals(PreferenceUtil.getInstance(getContext()).getUserId())){
             holder.setVisible(R.id.delete,true);
         }else{
             holder.setVisible(R.id.delete,false);

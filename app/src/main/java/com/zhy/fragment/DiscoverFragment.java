@@ -46,6 +46,9 @@ public class DiscoverFragment extends BaseViewModelFragment<FragmentDiscoverBind
         setHasOptionsMenu(true);
         binding.list.setHasFixedSize(true);
 
+        /**
+         * 线性布局管理器
+         */
         LinearLayoutManager layoutManager=new LinearLayoutManager(getHostActivity());
         binding.list.setLayoutManager(layoutManager);
         //分割线
@@ -73,6 +76,7 @@ public class DiscoverFragment extends BaseViewModelFragment<FragmentDiscoverBind
                     @Override
                     public void onSucceeded(ListResonse<Song> data) {
                         adapter.setNewInstance(data.getData().getData());
+//                        Log.d("TAG","onSucceeded:"+data.getData().getData().get(0).getName());
                     }
                 });
     }

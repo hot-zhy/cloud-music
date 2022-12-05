@@ -27,7 +27,7 @@ public class ImageUtil {
         /**
          * 上传到自己的服务器，拼接自己
          */
-        if(data.startsWith("r/")){
+        if(data.startsWith("img/")){
             data=String.format("%s%s", Config.ENDPOINT,data);
         }else{
             //        将图片相对路径转化为绝对路径
@@ -35,7 +35,7 @@ public class ImageUtil {
         }
 
 
-        if(data.contains("/files/Music")){
+        if(data.contains("file/image")){
             showLocalImage(view,data);
             return;
         }

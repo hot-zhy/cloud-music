@@ -44,13 +44,12 @@ public class LoginActivity extends BaseLoginActivity<ActivityLoginBinding> {
                     SuperToast.show(R.string.error_password_format);
                     return;
                 }
-                User param = new User();
-                param.setPhone(phone);
-                param.setPassword(password);
+
                 //登录BaseLoginActivity调用接口
-                login(param);
+                login(password,phone);
             }
         });
+        //注册按钮点击事件
         binding.register.setOnClickListener(v -> startActivity(RegisterActivity.class));
 
     }

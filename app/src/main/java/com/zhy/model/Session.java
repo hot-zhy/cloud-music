@@ -7,17 +7,17 @@ public class Session extends BaseId{
     /**
      * 登录以后的session
      */
-    private String session;
+    private String token;
 
-    public Session(String session) {
-        this.session = session;
+    public String getToken() {
+        return token;
     }
 
-    public String getSession() {
-        return session;
+    public void setToken(String token) {
+        this.token = token;
     }
 
-    public void setSession(String session) {
-        this.session = session;
+    public Session(String token) {
+        this.token = token;
     }
 }

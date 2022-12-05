@@ -167,23 +167,23 @@ public class MusicPlayerActivity extends BaseTitleActivity<ActivityMusicPlayerBi
         //获取当前播放的音乐以显示标题
         Song data= getMusicListManager().getData();
         //显示当前歌曲标题
-        setTitle(data.getTitle());
-        binding.title.setText(data.getTitle());
-        binding.subtitle.setText(data.getSinger().getNickname());
+        setTitle(data.getName());
+        binding.title.setText(data.getName());
+        binding.subtitle.setText(data.getSinger());
         /**
          * 显示歌手信息
          */
-        toolbar.setSubtitle(data.getSinger().getNickname());
+        toolbar.setSubtitle(data.getSinger());
         /**
          * 将背景设置为高斯模糊效果
          */
         RequestBuilder<Drawable> requestBuilder = Glide.with(this).asDrawable();
-        if(StringUtils.isBlank(data.getIcon())){
+        if(StringUtils.isBlank(data.getPic())){
             //使用默认封面图
             requestBuilder.load(R.drawable.default_cover);
         }else{
             //使用真实的图片
-            requestBuilder.load(ResourceUtil.resourceUri(data.getIcon()));
+            requestBuilder.load(ResourceUtil.resourceUri(data.getPic()));
         }
         //实现高斯模糊
         RequestOptions requestOptions = RequestOptions.bitmapTransform(new BlurTransformation(50,3));
@@ -206,7 +206,7 @@ public class MusicPlayerActivity extends BaseTitleActivity<ActivityMusicPlayerBi
 
                             }
                         });
-        ImageUtil.show(binding.record.binding.icon,data.getIcon());
+        ImageUtil.show(binding.record.binding.icon,data.getPic());
     }
 
 

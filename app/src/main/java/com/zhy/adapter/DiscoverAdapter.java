@@ -1,5 +1,7 @@
 package com.zhy.adapter;
 
+import android.util.Log;
+
 import androidx.annotation.NonNull;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
@@ -18,8 +20,8 @@ public class DiscoverAdapter extends BaseQuickAdapter<Song, BaseViewHolder> {
 
     @Override
     protected void convert(@NonNull BaseViewHolder holder, Song data) {
-        ImageUtil.show(holder.getView(R.id.icon),data.getIcon());
-        holder.setText(R.id.title,data.getTitle());
-        holder.setText(R.id.info,String.format("%s-%s",data.getSinger().getNickname(),"专辑"));
+        ImageUtil.show(holder.getView(R.id.icon),data.getPic());
+        holder.setText(R.id.title,data.getName());
+        holder.setText(R.id.info,String.format("%s-%s",data.getSinger(),"专辑"));
     }
 }
