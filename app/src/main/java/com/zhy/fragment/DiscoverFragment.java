@@ -83,7 +83,7 @@ public class DiscoverFragment extends BaseViewModelFragment<FragmentDiscoverBind
 
 
     /**
-     * 监听点击一首单曲,跳转到简单播放界面
+     * 监听点击一首单曲,跳转到播放界面
      */
     @Override
     protected void initListeners() {

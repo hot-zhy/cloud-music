@@ -16,10 +16,6 @@ import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.CopyOnWriteArrayList;
 /**
- * 单例设计模式
- */
-
-/**
  * 音乐播放管理器
  */
 public class MusicPlayerManager implements MediaPlayer.OnCompletionListener {
@@ -60,7 +56,6 @@ public class MusicPlayerManager implements MediaPlayer.OnCompletionListener {
 
     /**
      * 构造方法私有化
-     * 不希望外界创建它，实例化它
      * @param context
      */
     private MusicPlayerManager(Context context){
@@ -98,7 +93,7 @@ public class MusicPlayerManager implements MediaPlayer.OnCompletionListener {
     }
 
     /**
-     * 真正用来播放音乐的方法，使用系统播放器来播放
+     * 使用系统播放器来播放音乐
      * @param uri
      * @param data
      */
@@ -115,13 +110,8 @@ public class MusicPlayerManager implements MediaPlayer.OnCompletionListener {
     private void playNow() {
         try {
             if (uri.startsWith("content://")) {
-                //内容提供者格式
-
-                //本地音乐
-                //uri示例：content://media/external/audio/media/23
                 player.setDataSource(context, Uri.parse(uri));
             } else {
-                //设置数据源   player =new MediaPlayer();
                 player.setDataSource(uri);
             }
 

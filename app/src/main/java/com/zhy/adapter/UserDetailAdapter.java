@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
 import com.zhy.fragment.FeedFragment;
+import com.zhy.fragment.FeedMyFragment;
 import com.zhy.fragment.UserDetailAboutFragment;
 import com.zhy.model.Feed;
 import com.zhy.zhycloudmusic.R;
@@ -30,7 +31,7 @@ public class UserDetailAdapter extends BaseFragmentStatePagerAdapter<Integer>{
         switch (position){
             case 0:
                 //只返回本用户的FeedFragment
-                return FeedFragment.newInstance(userId);
+                return FeedMyFragment.newInstance(userId);
             default:
                 //返回关于
                 return UserDetailAboutFragment.newInstance(userId);

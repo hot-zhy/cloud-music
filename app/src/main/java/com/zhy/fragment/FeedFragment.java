@@ -1,9 +1,11 @@
 package com.zhy.fragment;
 
+import android.app.Dialog;
 import android.os.Bundle;
 import android.view.View;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.scwang.smart.refresh.layout.api.RefreshLayout;
 import com.scwang.smart.refresh.layout.listener.OnLoadMoreListener;
@@ -36,7 +38,6 @@ import java.util.HashMap;
  * 动态界面
  */
 public class FeedFragment extends BaseViewModelFragment<FragmentFeedBinding> {
-    private static PreferenceUtil sp;
     private FeedAdapter adapter;
     private boolean isRefresh;
     private Meta pageMeta;
@@ -62,12 +63,12 @@ public class FeedFragment extends BaseViewModelFragment<FragmentFeedBinding> {
         //请求数据，调用接口
         userId=getArguments().getString(Constant.ID);
 
-        if(sp.getUserId().equals(userId)){
-            /**
-             * 显示发布按钮
-             */
-            binding.primary.setVisibility(View.VISIBLE);
-        }
+//        if(sp.getUserId().equals(userId)){
+//            /**
+//             * 显示发布按钮
+//             */
+//            binding.primary.setVisibility(View.VISIBLE);
+//        }
         loadData();
     }
 

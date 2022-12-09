@@ -100,5 +100,5 @@ public interface DefaultService {
     Observable<ListResonse<String>> uploadFiles(@Part List<MultipartBody.Part> file, @Part("flavor")RequestBody flavor);
 
     @GET("v1/feeds/self")
-    Observable<ListResonse<Feed>> feeds(@Query("id")Integer id);
+    Observable<ListResonse<Feed>> feedSelf(@Query("id") String id);
 }

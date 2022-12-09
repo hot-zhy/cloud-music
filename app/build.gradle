@@ -84,11 +84,7 @@ dependencies {
     //适配retrofit支持rxjava
     implementation 'com.squareup.retrofit2:adapter-rxjava3:2.9.0'
 
-    //使用了Android响应式编程
-    //RxJava和RxAndroid区别？
-    //简单来说：就是RxAndroid在RxJava的基础上
-    //优化了一些功能
-    //增强了Android特有的功能
+
     //https://github.com/ReactiveX/RxAndroid
     implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
     //endregion

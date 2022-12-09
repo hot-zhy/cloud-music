@@ -49,7 +49,7 @@ public class MusicListManager implements MusicPlayerListener {
     private long lastTime;
 
     /**
-     * 私有化构造管理器，外界就不能创建了
+     * 私有化构造管理器
      * @param context
      */
     private MusicListManager(Context context) {
@@ -60,7 +60,7 @@ public class MusicListManager implements MusicPlayerListener {
         sp=PreferenceUtil.getInstance(context);
 
         orm =LiteORMUtil.getInstance(context);
-        //初始化列表
+        //初始化播放列表
         initPlayList();
     }
 
@@ -72,7 +72,7 @@ public class MusicListManager implements MusicPlayerListener {
     }
 
     /**
-     * 从数据库恢复播放列表（初始化播放列表）
+     * 从数据库初始化播放列表
      */
     private void initPlayList() {
         /**
@@ -122,7 +122,7 @@ public class MusicListManager implements MusicPlayerListener {
     }
 
     /**
-     * 把播放列表的数据传递进来,设置播放列表
+     * 设置播放列表
      * @param datum
      */
     public void setDatum(List<Song> datum) {

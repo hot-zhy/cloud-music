@@ -159,6 +159,7 @@ public class StartActivity extends BaseViewModeActivity<ActivityStartBinding> {
             Manifest.permission.WRITE_EXTERNAL_STORAGE
 
     })
+
     void onPermissionGranted() {
         prepareNext();
 

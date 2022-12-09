@@ -134,7 +134,6 @@ public class MusicPlayerActivity extends BaseTitleActivity<ActivityMusicPlayerBi
     }
 
     /**
-     * 初始化时会执行，切换到后台再回来也能执行
      * 界面显示了
      */
     @Override

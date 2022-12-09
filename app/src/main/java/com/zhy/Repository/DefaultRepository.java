@@ -122,8 +122,8 @@ public class DefaultRepository {
     /**
      * 获取本人列表
      */
-    public Observable<ListResonse<Feed>> feedSelf(Integer id){
-        return service.feeds(id)
+    public Observable<ListResonse<Feed>> feedSelf(String id){
+        return service.feedSelf(id)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
     }

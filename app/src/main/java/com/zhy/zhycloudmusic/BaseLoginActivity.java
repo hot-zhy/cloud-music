@@ -27,23 +27,24 @@ public class BaseLoginActivity<VB extends ViewBinding> extends BaseTitleActivity
                      */
                     @Override
                     public void onSucceeded(DetailResponse<Session> data) {
-                        onLogin(data.getData());
+                        onLogin(data.getData().getId());
                     }
                 });
     }
 
     /**
      * 保存登录信息
-     * @param data
+     * @param id
      */
-    private void onLogin(Session data) {
+    private void onLogin(String id) {
         //保存userId到偏好配置
-        sp.setUserId(data.getId());
-        sp.setSession(data.getToken());
+        sp.setUserId(id);
+        sp.setSession(id);
 //        将登录事件代理到AppContext中
 //        其他的功能可能也需要用户登录
-        AppContext.getInstance().onLogin(data);
+        AppContext.getInstance().onLogin(id);
 //        登陆完成后，关闭所有界面
         MyActivityManager.getInstance().finishAllLogin();
+
     }
 }

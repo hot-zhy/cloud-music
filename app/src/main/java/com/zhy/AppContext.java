@@ -82,7 +82,7 @@ public class AppContext extends Application implements Application.ActivityLifec
     }
 
 
-    public void onLogin(Session data) {
+    public void onLogin(String id) {
         LoginStatusChanged(true);
     }
 

@@ -7,13 +7,17 @@
         <entry key="..\:/CloudMusic/app/src/main/res/drawable/add.xml" value="0.137" />
         <entry key="..\:/CloudMusic/app/src/main/res/drawable/card_style.xml" value="0.1375" />
         <entry key="..\:/CloudMusic/app/src/main/res/drawable/comment_count_small.xml" value="0.1415" />
+        <entry key="..\:/CloudMusic/app/src/main/res/drawable/ellipsis_vertical.xml" value="0.163" />
         <entry key="..\:/CloudMusic/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1515" />
         <entry key="..\:/CloudMusic/app/src/main/res/drawable/music_list.xml" value="0.1415" />
+        <entry key="..\:/CloudMusic/app/src/main/res/drawable/music_next.xml" value="0.163" />
         <entry key="..\:/CloudMusic/app/src/main/res/drawable/music_pause.xml" value="0.1415" />
         <entry key="..\:/CloudMusic/app/src/main/res/drawable/music_play.xml" value="0.1415" />
         <entry key="..\:/CloudMusic/app/src/main/res/drawable/music_repeat_list.xml" value="0.1415" />
         <entry key="..\:/CloudMusic/app/src/main/res/drawable/play.xml" value="0.1375" />
+        <entry key="..\:/CloudMusic/app/src/main/res/drawable/search.xml" value="0.163" />
         <entry key="..\:/CloudMusic/app/src/main/res/drawable/selector_edit_text.xml" value="0.1415" />
+        <entry key="..\:/CloudMusic/app/src/main/res/drawable/setting.xml" value="0.163" />
         <entry key="..\:/CloudMusic/app/src/main/res/drawable/shape_card_border.xml" value="0.1495" />
         <entry key="..\:/CloudMusic/app/src/main/res/drawable/shape_edit_text_border.xml" value="0.1415" />
         <entry key="..\:/CloudMusic/app/src/main/res/drawable/shape_edit_text_border_selected.xml" value="0.1415" />

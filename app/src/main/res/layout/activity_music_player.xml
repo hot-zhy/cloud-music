@@ -24,6 +24,7 @@
         <include layout="@layout/toolbar_transparent" />
 <!--        添加黑椒唱片控件-->
         <!--进度容器-->
+
         <com.zhy.view.RecordPageView
             android:id="@+id/record"
             android:layout_width="match_parent"
@@ -41,11 +42,13 @@
             <TextView
                 android:textStyle="bold"
                 android:textSize="27sp"
+                android:textColor="@color/white"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/title"
                 android:text="讲不出再见"/>
             <TextView
+                android:textColor="@color/black11"
                 android:layout_marginTop="@dimen/d10"
                 android:textSize="17sp"
                 android:layout_width="wrap_content"
@@ -85,7 +88,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="00:00"
-                android:textColor="#93c057"
+                android:textColor="@color/white"
                 android:textSize="@dimen/text_small" />
             <include layout="@layout/fill"/>
             <!--结束位置-->
@@ -94,7 +97,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="00:00"
-                android:textColor="#93c057"
+                android:textColor="@color/white"
                 android:textSize="@dimen/text_small" />
 
         </LinearLayout>

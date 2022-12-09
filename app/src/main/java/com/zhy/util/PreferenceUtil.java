@@ -22,10 +22,6 @@ public class PreferenceUtil {
          * 获取系统默认偏好配置，在设置界面保存的值就可以这样获取
          */
         preferences = PreferenceManager.getDefaultSharedPreferences(context);
-        /**
-         * 自定义偏好配置文件的名称
-         */
-//        SharedPreferences zhy = context.getSharedPreferences("zhy", Context.MODE_PRIVATE);
     }
 
     public static PreferenceUtil getInstance(Context context) {

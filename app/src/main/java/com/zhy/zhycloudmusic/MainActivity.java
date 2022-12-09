@@ -49,11 +49,6 @@ public class MainActivity extends BaseTitleActivity<ActivityMainBinding> {
     @Override
     protected void initViews() {
         super.initViews();
-//        将控件装载到activity_main.xml中的FragmentLayout中
-//        getSupportFragmentManager()
-//                .beginTransaction()
-//                .replace(R.id.container, MyFragment.newInstance())
-//                .commit();
         //缓存页面数量
         binding.list.setOffscreenPageLimit(3);
 //        指示器

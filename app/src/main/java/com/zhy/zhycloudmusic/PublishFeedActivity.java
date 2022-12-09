@@ -40,6 +40,7 @@ import com.zhy.model.response.ListResonse;
 import com.zhy.superUI.decoration.GridDividerItemDecoration;
 import com.zhy.superUI.reflect.toast.SuperToast;
 import com.zhy.util.DensityUtil;
+import com.zhy.util.PreferenceUtil;
 import com.zhy.zhycloudmusic.databinding.ActivityPublishFeedBinding;
 import com.zhy.zhycloudmusic.util.StringUtil;
 
@@ -124,14 +125,14 @@ public class PublishFeedActivity extends BaseTitleActivity<ActivityPublishFeedBi
         PictureSelector.create(this)
                 .openGallery(SelectMimeType.ofImage())
                 .setImageEngine(GlideEngine.createGlideEngine())
-                .setMaxSelectNum(9)// 最大图片选择数量 int
-                .setMinSelectNum(1)// 最小选择数量 int
-                .setImageSpanCount(3)// 每行显示个数 int
-                .setSelectionMode(SelectModeConfig.MULTIPLE)// 多选 or 单选 MULTIPLE or SINGLE
-                .isPreviewImage(true)// 是否可预览图片 true or false
-                .isDisplayCamera(true)// 是否显示拍照按钮 true or false
-                .setCameraImageFormat(PictureMimeType.JPEG)// 拍照保存图片格式后缀,默认jpeg
-                //压缩
+                .setMaxSelectNum(9)
+                .setMinSelectNum(1)
+                .setImageSpanCount(3)
+                .setSelectionMode(SelectModeConfig.MULTIPLE)
+                .isPreviewImage(true)
+                .isDisplayCamera(true)
+                .setCameraImageFormat(PictureMimeType.JPEG)
+                //压缩图片
                 .setCompressEngine(new CompressFileEngine() {
                     @Override
                     public void onStartCompress(Context context, ArrayList<Uri> source, OnKeyValueResultCallbackListener call) {
@@ -245,19 +246,37 @@ public class PublishFeedActivity extends BaseTitleActivity<ActivityPublishFeedBi
      * 点击发布按钮后发布动态
      */
     private void saveFeed(List<String> medias) {
+        String id;
+        id=sp.getUserId();
+//        System.out.println(sp.getUserId());
 //        调用网络接口发布动态
 //        Feed feed=new Feed();0
 //        feed.setContent(content);
 //        feed.setMedia(StringUtils.join(medias,","));
-        DefaultRepository.getInstance()
-                .createFeed(content,StringUtils.join(medias,","),sp.getUserId())
-                .subscribe(new HttpObserver<DetailResponse<BaseId>>() {
-            @Override
-            public void onSucceeded(DetailResponse<BaseId> data) {
-                EventBus.getDefault().post(new FeedChangedEvent());
-                //发布动态成功
-                finish();
-            }
-        });
+        if(StringUtils.join(medias,",")==null){
+            DefaultRepository.getInstance()
+                    .createFeed(content,"", id)
+                    .subscribe(new HttpObserver<DetailResponse<BaseId>>() {
+                        @Override
+                        public void onSucceeded(DetailResponse<BaseId> data) {
+                            EventBus.getDefault().post(new FeedChangedEvent());
+                            //发布动态成功
+                            finish();
+                        }
+                    });
+        }else{
+            DefaultRepository.getInstance()
+                    .createFeed(content,StringUtils.join(medias,","), id)
+                    .subscribe(new HttpObserver<DetailResponse<BaseId>>() {
+                        @Override
+                        public void onSucceeded(DetailResponse<BaseId> data) {
+                            EventBus.getDefault().post(new FeedChangedEvent());
+                            //发布动态成功
+                            finish();
+                        }
+                    });
+
+        }
+
     }
 }

@@ -5,8 +5,6 @@ import com.zhy.zhycloudmusic.BuildConfig;
 
 /**
  * 配置文件
- * <p>
- * 例如：API地址，QQ等第三方服务配置信息等
  */
 public class Config {
     /**

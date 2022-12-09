@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <ImageView
-                android:src="@drawable/doggg"
+                android:src="@drawable/dogggggg"
                 android:layout_width="120dp"
                 android:layout_height="120dp">
 
@@ -54,11 +54,12 @@
             app:cardElevation="10dp"
             app:cardCornerRadius="8dp"
             app:strokeColor="@color/black"
-            app:strokeWidth="3dp"
+            app:strokeWidth="2dp"
             
             >
             <ImageView
                 android:background="@drawable/bg_cat"
+                android:alpha="0.6"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 

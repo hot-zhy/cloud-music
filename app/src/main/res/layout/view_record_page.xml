@@ -51,18 +51,18 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 <!--    黑胶唱片指针-->
-    <ImageView
-        android:id="@+id/record_thumb"
-        android:layout_width="92dp"
-        android:layout_height="138dp"
-        android:src="@drawable/cd_thumb"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginLeft="61dp"
-        android:layout_marginTop="@dimen/padding_meddle"
-        >
+<!--    <ImageView-->
+<!--        android:id="@+id/record_thumb"-->
+<!--        android:layout_width="92dp"-->
+<!--        android:layout_height="138dp"-->
+<!--        android:src="@drawable/cd_thumb"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        android:layout_marginLeft="61dp"-->
+<!--        android:layout_marginTop="@dimen/padding_meddle"-->
+<!--        >-->
 
-    </ImageView>
+<!--    </ImageView>-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

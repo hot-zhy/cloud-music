@@ -29,7 +29,7 @@ public class FeedAdapter extends BaseQuickAdapter<Feed, BaseViewHolder> {
 
     @Override
     protected void convert(@NonNull BaseViewHolder holder, Feed feed) {
-//        ImageUtil.showAvatar(holder.getView(R.id.icon),feed.getIcon());
+        ImageUtil.showAvatar(holder.getView(R.id.icon),feed.getIcon());
         holder.setText(R.id.nickname,feed.getNickname());
         holder.setText(R.id.content,feed.getContent());
         holder.setText(R.id.date, SuperDateUtil.commonFormat(feed.getCreateAt()));
@@ -63,12 +63,14 @@ public class FeedAdapter extends BaseQuickAdapter<Feed, BaseViewHolder> {
             results.addAll(feed.getMedias());
             //为适配器添加数据，添加数据都在具体的adapter的上一层
             imageAdapter.setNewInstance(results);
+            //点击预览
+
         }else{
             //没有图片
-            holder.setVisible(R.id.list,true);
 //            移除适配器
             listView.setAdapter(null);
             listView.setLayoutManager(null);
+            holder.setGone(R.id.list,true);
 
         }
 

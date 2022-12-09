@@ -6,12 +6,12 @@ import com.zhy.model.Song;
 
 /**
  * 为了改变状态
- * 监听播放器内部的状态改变，并将这个状态改变分发出去，外界来监听，用的到就用
+ * 监听播放器内部的状态改变，并将这个状态改变分发出去，外界来监听
  * 播放器监听接口
  */
 public interface MusicPlayerListener {
     /**
-     * 音乐已经暂停了,默认实现接口，用的话就去实现，不用就不用管
+     * 音乐已经暂停了
      */
     default void onPaused(Song data){
 

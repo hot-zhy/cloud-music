@@ -35,9 +35,6 @@ import com.zhy.util.DensityUtil;
 
 /**
  * 可自定义分割线样式
- *
- * @author XUE
- * @date 2017/9/10 15:24
  */
 public class GridDividerItemDecoration extends RecyclerView.ItemDecoration {
     private static final int[] ATTRS = new int[]{
@@ -97,6 +94,7 @@ public class GridDividerItemDecoration extends RecyclerView.ItemDecoration {
         super.onDraw(canvas, parent, state);
 
         GridLayoutManager gridLayoutManager = (GridLayoutManager) parent.getLayoutManager();
+        assert gridLayoutManager != null;
         int spanCount = gridLayoutManager.getSpanCount();
 
         final int childCount = parent.getChildCount();
