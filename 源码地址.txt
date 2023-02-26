@@ -1,0 +1,4 @@
+1)服务器地址：http://119.91.198.46:9000/
+2)客户端源码地址：https://github.com/hot-zhy/cloud-music
+3)服务端源码地址：https://github.com/Accepted1226/cloud-music-server
+4)apk下载地址：https://github.com/hot-zhy/VaeMusic
